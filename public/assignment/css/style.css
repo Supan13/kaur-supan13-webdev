@@ -3,5 +3,40 @@ input.form-control {
 }
 
 body {
-    padding-top: 36px;
+    padding-top: 70px;
+}
+
+.navbar-default {
+    background-color: #2b669a;
+}
+
+.navbar-default .navbar-brand {
+    color: white;
+}
+.navbar-default .navbar-link{
+    color:white
+}
+
+.glyphicon-ok{
+    margin-right: 15px;
+    color:white;
+}
+
+.glyphicon-plus{
+    margin-right:15px;
+    color:white;
+}
+.glyphicon-chevron-left{
+    color:white;
+}
+
+.glyphicon-user{
+    color: white;
+}
+.glyphicon-eye-open{
+    color:white;
+}
+
+.glyphicon-play{
+    color:white;
 }
