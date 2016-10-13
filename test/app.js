@@ -6,20 +6,20 @@ module.exports = function(app)
 
     var connectionString = 'mongodb://127.0.0.1:27017/test';
 
-
     if(process.env.MONGODB_USERNAME) {
 
-        var Supan13 = process.env.MONGODB_USERNAME;
+        var username = process.env.MONGODB_USERNAME;
 
-        var bioinformatics = process.env.MONGODB_PASSWORD;
+        var password = process.env.MONGODB_PASSWORD;
 
         connectionString = 'mongodb://'+
 
             process.env.MONGODB_USERNAME + ':' +
 
             process.env.MONGODB_PASSWORD +
-                '@cluster0-shard-00-00-4bzso.mongodb.net:27017,cluster0-shard-00-01-4bzso.mongodb.net:27017,cluster0-shard-00-02-4bzso.mongodb.net:27017/admin?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin';
+            '@cluster0-shard-00-00-4bzso.mongodb.net:27017,cluster0-shard-00-01-4bzso.mongodb.net:27017,cluster0-shard-00-02-4bzso.mongodb.net:27017/admin?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin';
     }
+
     var mongoose = require("mongoose");
     mongoose.connect(connectionString);
 
