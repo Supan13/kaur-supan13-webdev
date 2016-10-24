@@ -1,25 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Title</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="css/style.css" rel="stylesheet"/>
-</head>
-
-<body>
-
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class ="navbar-text pull-left">
-            <a href="widget-list.html" class="navbar-link">
+            <a href="#/user/:uid/website/:wid/page/:pid/widget" class="navbar-link">
                     <span class = "glyphicon glyphicon-chevron-left">
                     </span>
             </a>
         </div>
         <div>
-            <a class="navbar-header navbar-brand" href="#">
+            <a class="navbar-header navbar-brand" href="#/user/:uid/website/:wid/page/:pid/widget/new">
                 Choose Widget
             </a>
         </div>
@@ -30,10 +18,10 @@
     <ul class="list-group">
         <li
                 class="list-group-item">
-            <a href="widget-heading.html">
+            <a href="#/user/:uid/website/:wid/page/:pid/widget/new">
                 Header
             </a>
-            <a href="widget-heading.html">
+            <a href="#/user/:uid/website/:wid/page/:pid/widget/:wgid/header">
                 <span class="glyphicon glyphicon-cog pull-right"></span>
             </a>
         </li>
@@ -41,89 +29,94 @@
         </li>
 
         <li class="list-group-item">
-            <a href="#">
+            <a href="#/user/:uid/website/:wid/page/:pid/widget/new">
                 Label
             </a>
-            <a href="widget-heading.html">
+            <a href="#/user/:uid/website/:wid/page/:pid/widget/new">
                 <span class="glyphicon glyphicon-cog pull-right"></span>
             </a>
         </li>
         <li class="list-group-item">
-            <a href="#">
+            <a href="#/user/:uid/website/:wid/page/:pid/widget/new">
                 HTML
             </a>
-            <a href="widget-heading.html">
+            <a href="#/user/:uid/website/:wid/page/:pid/widget/new">
                 <span class="glyphicon glyphicon-cog pull-right"></span>
             </a>
         </li>
         <li class="list-group-item">
-            <a href="#">
+            <a href="#/user/:uid/website/:wid/page/:pid/widget/new">
                 Text Input
             </a>
-            <a href="widget-heading.html">
+            <a href="#/user/:uid/website/:wid/page/:pid/widget/new">
                 <span class="glyphicon glyphicon-cog pull-right"></span>
             </a>
         </li>
         <li class="list-group-item">
-            <a href="#">
+            <a href="#/user/:uid/website/:wid/page/:pid/widget/new">
                 Link
             </a>
-            <a href="widget-heading.html">
+            <a href="#/user/:uid/website/:wid/page/:pid/widget/new">
                 <span class="glyphicon glyphicon-cog pull-right"></span>
             </a>
         </li>
         <li class="list-group-item">
-            <a href="#">
+            <a href="#/user/:uid/website/:wid/page/:pid/widget/new">
                 Button
             </a>
-            <a href="widget-heading.html">
+            <a href="#/user/:uid/website/:wid/page/:pid/widget/new">
                 <span class="glyphicon glyphicon-cog pull-right"></span>
             </a>
         </li>
         <li class="list-group-item">
-            <a href="widget-image.html">
+            <a href="#/user/:uid/website/:wid/page/:pid/widget/new">
                 Image
             </a>
-            <a href="widget-heading.html">
+            <a href="#/user/:uid/website/:wid/page/:pid/widget/:wgid/image">
                 <span class="glyphicon glyphicon-cog pull-right"></span>
             </a>
         </li>
         <li class="list-group-item">
-            <a href="widget-youtube.html">
+            <a href="#/user/:uid/website/:wid/page/:pid/widget/new">
                 You Tube
             </a>
-            <a href="widget-heading.html">
+            <a href="#/user/:uid/website/:wid/page/:pid/widget/:wgid/youtube">
                 <span class="glyphicon glyphicon-cog pull-right"></span>
             </a>
         </li>
         <li class="list-group-item">
-            <a href="#">
+            <a href="#/user/:uid/website/:wid/page/:pid/widget/new">
                 Data Table
             </a>
-            <a href="widget-heading.html">
+            <a href="#/user/:uid/website/:wid/page/:pid/widget/new">
                 <span class="glyphicon glyphicon-cog pull-right"></span>
             </a>
         </li>
         <li class="list-group-item">
-            <a href="#">
+            <a href="#/user/:uid/website/:wid/page/:pid/widget/new">
                 Repeater
             </a>
-            <a href="widget-heading.html">
+            <a href="#/user/:uid/website/:wid/page/:pid/widget/new">
                 <span class="glyphicon glyphicon-cog pull-right"></span>
             </a>
         </li>
     </ul>
 </div>
+<div class="col-sm-8 pull-right" style="padding-left: 30px;padding-right: 0px;">
+    <form>
+        <div ng-include="'views/widget/widget-'+model.widget.widgetType+'-editor.html'"></div>
+    </form>
+</div>
+</div>
+
 <nav class="navbar navbar-default navbar-fixed-bottom ">
     <div class="container-fluid">
         <div class="row navbar-text pull-right">
             <div class="col-xs-12 text-center">
-                <a href="profile.html">
+                <a href="#/user/:uid">
                     <span class="glyphicon glyphicon-user"></span>
                 </a>
             </div>
         </div>
     </div>
 </nav>
-</body>
-</html

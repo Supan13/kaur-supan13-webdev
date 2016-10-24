@@ -1,30 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Title</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="css/style.css" rel="stylesheet"/>
-</head>
-
-<body>
-   <nav class="navbar navbar-default navbar-fixed-top ">
+<nav class="navbar navbar-default navbar-fixed-top ">
      <div class="row container-fluid">
          <div class="col-sm-4 hidden-xs">
              <div class="navbar-text pull-left" style="margin-left:0px">
-                 <a href="website-list.html">
+                 <a href="#/{{model.userId}}/website">
+
                      <span class=" glyphicon glyphicon-chevron-left">
                      </span>
                  </a>
              </div>
              <div class="navbar-header">
-                 <a class="navbar-brand" href="#">
+                 <a class="navbar-brand" href="#/user/:uid/website">
                      Websites
                  </a>
              </div>
              <div class="navbar-text pull-right">
-                 <a href="#">
+                 <a href="#/user/:uid/website/new">
                      <span class=" glyphicon glyphicon-plus">
                      </span>
                  </a>
@@ -32,92 +22,66 @@
              </div>
          <div class="col-sm-8">
              <div class="navbar-text pull-left" style="margin-left:0px">
-                 <a href="website-list.html">
+                 <a href="#/user/:uid/website">
                      <span class=" glyphicon glyphicon-chevron-left">
                      </span>
                  </a>
              </div>
                  <div class="navbar-text pull-right" style="margin-right:0px">
-                     <a href="website-list.html">
+                     <a ng-click="model.createWebsite(website)">
                      <span class=" glyphicon glyphicon-ok">
                      </span>
                      </a>
                  </div>
                  <div class="navbar-header">
-                 <a class="navbar-brand" href="#">
+                 <a class="navbar-brand" href="#/user/:uid/website/new">
                     New Website
                  </a>
              </div>
          </div>
     </div>
 </nav>
+
        <div class="row">
             <div class="col-sm-4 hidden-xs">
                 <div class="container-fluid">
                     <ul class="list-group">
-                        <li class="list-group-item">
+                        <li ng-repeat="website in model.websites" class="list-group-item">
                             <a href="#">
-                                Address Book App
+                                {{website.name}}
                             </a>
-                            <a href="#">
+                            <a href="#/user/:uid/website/:wid">
                                <span class="glyphicon glyphicon-cog pull-right"></span>
                                 </a>
                             </li>
-
-                        <li class="list-group-item">
-                            <a href="#">
-                                Blogger
-                            </a>
-                            <a href="#">
-                                <span class="glyphicon glyphicon-cog pull-right"></span>
-                            </a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="#">
-                                Blogging App
-                            </a>
-                            <a href="#">
-                                <span class="glyphicon glyphicon-cog pull-right"></span>
-                            </a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="#">
-                                Script Testing App
-                            </a>
-                            <a href="#">
-                                <span class="glyphicon glyphicon-cog pull-right"></span>
-                            </a>
-                        </li>
                     </ul>
                 </div>
                 </div>
+
+
             <div class="col-sm-8">
                 <form>
                     <div class="form-group" style="margin-right: 0px">
                         <label for="name">Name</label>
-                        <input type="text" class="form-control" id="name" placeholder="Name">
+                        <input ng-model="website.name" type="text" class="form-control" id="name" placeholder="Name">
                     </div>
                     <div class="form-group">
                         <label for="description">Description</label>
-                        <input type="text" class="form-control" id="description" placeholder="Description">
+                        <input ng-model="website.description" type="text" class="form-control" id="description" placeholder="Description">
                     </div>
                 </form>
             </div>
        </div>
 
-
-       <nav class="navbar navbar-default navbar-fixed-bottom ">
+<nav class="navbar navbar-default navbar-fixed-bottom ">
            <div class="container-fluid">
                <div class="row navbar-text pull-right">
                    <div class="col-xs-12 text-center">
-                       <a href="profile.html">
+                       <a href="#/user/:uid">
                            <span class="glyphicon glyphicon-user"></span>
                        </a>
                    </div>
                    </div>
-               </div>
-           </nav>
+           </div>
+</nav>
 
-
-</body>
-</html>

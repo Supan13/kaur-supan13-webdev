@@ -1,30 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Title</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="css/style.css" rel="stylesheet"/>
-</head>
-
-<body>
 <nav class="navbar navbar-default navbar-fixed-top ">
     <div class="row container-fluid">
         <div class="col-sm-4 hidden-xs">
             <div class="navbar-text pull-left" style="margin-left:0px">
-                <a href="page-list.html">
+                <a href="#/user/:uid/website/:wid/page">
                      <span class=" glyphicon glyphicon-chevron-left">
                      </span>
                 </a>
             </div>
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="#/user/:uid/website/:wid/page">
                     Pages
                 </a>
             </div>
             <div class="navbar-text pull-right">
-                <a href="#">
+                <a href="#/user/:uid/website/:wid/page/new">
                      <span class=" glyphicon glyphicon-plus">
                      </span>
                 </a>
@@ -32,19 +21,19 @@
         </div>
         <div class="col-sm-8">
             <div class="navbar-text pull-left" style="margin-left:0px">
-                <a href="page-list.html">
+                <a href="#/user/:uid/website/:wid/page">
                      <span class=" glyphicon glyphicon-chevron-left">
                      </span>
                 </a>
             </div>
             <div class="navbar-text pull-right" style="margin-right:0px">
-                <a href="page-list.html">
+                <a ng-click="model.createPage(page)">
                      <span class=" glyphicon glyphicon-ok">
                      </span>
                 </a>
             </div>
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="#/user/:uid/website/:wid/page/new">
                     New Page
                 </a>
             </div>
@@ -58,10 +47,10 @@
             <ul class="list-group">
                 <li
                         class="list-group-item">
-                    <a href="#">
+                    <a href="#/user/:uid/website/:wid/page/:pid/widget">
                         Blog Post
                     </a>
-                    <a href="page-edit.html">
+                    <a href="#/user/:uid/website/:wid/page/:pid">
                         <span class="glyphicon glyphicon-cog pull-right"></span>
                     </a>
                 </li>
@@ -69,34 +58,34 @@
                 </li>
 
                 <li class="list-group-item">
-                    <a href="#">
+                    <a href="#/user/:uid/website/:wid/page/:pid/widget">
                         Blogs
                     </a>
-                    <a href="page-edit.html">
+                    <a href="#/user/:uid/website/:wid/page/:pid">
                         <span class="glyphicon glyphicon-cog pull-right"></span>
                     </a>
                 </li>
                 <li class="list-group-item">
-                    <a href="#">
+                    <a href="#/user/:uid/website/:wid/page/:pid/widget">
                         Home
                     </a>
-                    <a href="page-edit.html">
+                    <a href="#/user/:uid/website/:wid/page/:pid">
                         <span class="glyphicon glyphicon-cog pull-right"></span>
                     </a>
                 </li>
                 <li class="list-group-item">
-                    <a href="#">
+                    <a href="#/user/:uid/website/:wid/page/:pid/widget">
                         About
                     </a>
-                    <a href="page-edit.html">
+                    <a href="#/user/:uid/website/:wid/page/:pid">
                         <span class="glyphicon glyphicon-cog pull-right"></span>
                     </a>
                 </li>
                 <li class="list-group-item">
-                    <a href="#">
+                    <a href="#/user/:uid/website/:wid/page/:pid/widget">
                         Contact Us
                     </a>
-                    <a href="page-edit.html">
+                    <a href="#/user/:uid/website/:wid/page/:pid">
                         <span class="glyphicon glyphicon-cog pull-right"></span>
                     </a>
                 </li>
@@ -122,14 +111,10 @@
     <div class="container-fluid">
         <div class="row navbar-text pull-right">
             <div class="col-xs-12 text-center">
-                <a href="profile.html">
+                <a href="#/user/:uid">
                     <span class="glyphicon glyphicon-user"></span>
                 </a>
             </div>
         </div>
     </div>
 </nav>
-
-
-</body>
-</html>

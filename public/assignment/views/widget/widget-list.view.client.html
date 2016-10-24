@@ -1,0 +1,90 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-text pull-right">
+            <a href="#/user/:uid/website/:wid/page/:pid/widget/new" class="navbar-link">
+          <span class="glyphicon glyphicon-plus">
+          </span
+            </a>
+        </div>
+        <div class ="navbar-text pull-left">
+            <a href="#/user/:uid/website/:wid/page" class="navbar-link">
+                    <span class = "glyphicon glyphicon-chevron-left">
+                    </span>
+            </a>
+        </div>
+        <div>
+            <a class="navbar-header navbar-brand" href="#/user/:uid/website/:wid/page/:pid/widget">
+                Widgets
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class="row container-fluid">
+    <div class="col-sm-4 hidden-xs" style="margin-left:15px; margin-top: 50px; padding-top: 15px; margin-bottom: 50px; position: absolute;top: 0px;bottom: 0px;overflow: auto;">
+        <ul class="list-group">
+            <li ng-repeat="website in model.websites" class="list-group-item">
+                <a href="#">
+                    {{website.name}}
+                </a>
+                <a href="#/user/{{model.userId}}/website/{{website._id}}" class="pull-right" style="margin-left: 15px;">
+                    <span class="glyphicon glyphicon-cog"></span>
+                </a>
+                <a href="#" class="pull-right">
+                    <span class="glyphicon glyphicon-play"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="col-sm-12 pull-right" style="padding-left: 30px;padding-right: 0px;">
+        <div ng-switch="widget.widgetType"
+             ng-repeat="widget in model.widgets">
+            <a href="#/user/{{model.uid}}/website/{{model.wid}}/page/{{model.pid}}/widget/{{widget._id}}" class="pull-right">
+                <span class="glyphicon glyphicon-cog"></span>
+            </a>
+            <div ng-switch="widget.size" ng-switch-when="HEADER">
+                <h1 ng-switch-when="1">{{widget.text}}</h1>
+                <h2 ng-switch-when="2">{{widget.text}}</h2>
+                <h3 ng-switch-when="3">{{widget.text}}</h3>
+                <h4 ng-switch-when="4">{{widget.text}}</h4>
+                <h5 ng-switch-when="5">{{widget.text}}</h5>
+                <h6 ng-switch-when="6">{{widget.text}}</h6>
+            </div>
+            <div ng-switch-when="YOUTUBE">
+                <iframe width="560" height="315"
+                        ng-src="{{model.checkSafeYouTubeUrl(widget.url)}}"
+                        frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div ng-switch-when="IMAGE">
+                image
+            </div>
+            <div ng-switch-when="HTML" ng-bind-html="model.checkSafeHtml(widget.text)">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<nav class="navbar navbar-default navbar-fixed-bottom ">
+    <div class="container-fluid">
+        <div class="row navbar-text pull-left">
+         <a href="#/user/:uid/website/:wid/page/:pid/widget">
+             <span class ="glyphicon glyphicon-play"></span>
+         </a>
+            </div>
+        <div class="row navbar-text pull-left">
+            <a href="#/user/:uid/website/:wid/page/:pid/widget">
+                <span class ="glyphicon glyphicon-eye-open"></span>
+            </a>
+        </div>
+
+        <div class="row navbar-text pull-right">
+                <a href="#/user/:uid">
+                    <span class="glyphicon glyphicon-user"></span>
+                </a>
+            </div>
+    </div>
+</nav>

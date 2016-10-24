@@ -1,19 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="WebAppMaker">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
+    <script src="app.js"></script>
+    <script src="config.js"></script>
+    <script src="views/user/login.controller.client.js"></script>
+    <script src="views/user/profile.controller.client.js"></script>
+    <script src="views/website/website-edit.controller.client.js"></script>
+    <script src="views/website/website-list.controller.client.js"></script>
+    <script src="views/website/website-new.controller.client.js"></script>
+    <script src="views/widget/widget-edit.controller.client.js"></script>
+    <script src="views/widget/widget-list.controller.client.js"></script>
+    <script src="views/page/page-list.controller.client.js"></script>
+    <script src="views/page/page-new.controller.client.js"></script>
+    <script src="views/page/page-edit.controller.client.js"></script>
+    <script src="services/user.service.client.js"></script>
+    <script src="services/website.service.client.js"></script>
+    <script src="services/widget.service.client.js"></script>
+    <script src="services/page.service.client.js"></script>
+
     <title>Assignment Home Page</title>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
         <link href="css/style.css" rel="stylesheet"/>
     </head>
 <body>
-        <div class="container">
-        <h1>Assignment Home Page</h1>
-        <a class="btn btn-primary btn-block"
-           href="login.html">Login</a>
-        <a class="btn btn-success btn-block"
-           href="register.html">Register</a>
-            </div>
+        <div ng-view>div</div>
+
 </body>
 </html>
