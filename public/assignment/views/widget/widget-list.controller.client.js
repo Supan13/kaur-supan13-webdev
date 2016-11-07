@@ -14,6 +14,11 @@
 
         function init() {
             vm.widgets = WidgetService.findWidgetsForPage(vm.pid);
+            var widgets = $(".wam-widgets")
+                .sortable({
+                    axis :'y'
+                });
+            console.log(widgets);
         }
         init();
 

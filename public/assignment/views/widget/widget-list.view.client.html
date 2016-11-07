@@ -1,21 +1,38 @@
 <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-        <div class="navbar-text pull-right">
-            <a href="#/user/:uid/website/:wid/page/:pid/widget/new" class="navbar-link">
-          <span class="glyphicon glyphicon-plus">
-          </span
-            </a>
+    <div class="row container-fluid">
+        <div class="col-sm-4 hidden-xs">
+            <div class="navbar-text pull-left" style="margin-left: 0px">
+                <a href="#/profile">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+            </div>
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    Widgets
+                </a>
+            </div>
+            <div class="navbar-text pull-right" style="margin-right: 27px;">
+                <a href="#/website/new">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </a>
+            </div>
         </div>
-        <div class ="navbar-text pull-left">
-            <a href="#/user/:uid/website/:wid/page" class="navbar-link">
-                    <span class = "glyphicon glyphicon-chevron-left">
-                    </span>
-            </a>
-        </div>
-        <div>
-            <a class="navbar-header navbar-brand" href="#/user/:uid/website/:wid/page/:pid/widget">
-                Widgets
-            </a>
+        <div class="col-sm-8">
+            <div class="navbar-text pull-left" style="margin-left: 0px">
+                <a href="#">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+            </div>
+            <div class="navbar-text pull-right" style="margin-right: 0px;">
+                <a href="#">
+                    <span class="glyphicon glyphicon-ok"></span>
+                </a>
+            </div>
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    Widgets
+                </a>
+            </div>
         </div>
     </div>
 </nav>
@@ -36,9 +53,8 @@
             </li>
         </ul>
     </div>
-
-    <div class="col-sm-12 pull-right" style="padding-left: 30px;padding-right: 0px;">
-        <div ng-switch="widget.widgetType"
+    <div  class="col-sm-8 pull-right wam-widgets wam-sortable" style="padding-left: 30px;padding-right: 0px;">
+        <div ng-switch="widget.widgetType" class="wam-widget"
              ng-repeat="widget in model.widgets">
             <a href="#/user/{{model.uid}}/website/{{model.wid}}/page/{{model.pid}}/widget/{{widget._id}}" class="pull-right">
                 <span class="glyphicon glyphicon-cog"></span>
@@ -67,14 +83,13 @@
 </div>
 
 
-
 <nav class="navbar navbar-default navbar-fixed-bottom ">
     <div class="container-fluid">
         <div class="row navbar-text pull-left">
-         <a href="#/user/:uid/website/:wid/page/:pid/widget">
-             <span class ="glyphicon glyphicon-play"></span>
-         </a>
-            </div>
+            <a href="#/user/:uid/website/:wid/page/:pid/widget">
+                <span class ="glyphicon glyphicon-play"></span>
+            </a>
+        </div>
         <div class="row navbar-text pull-left">
             <a href="#/user/:uid/website/:wid/page/:pid/widget">
                 <span class ="glyphicon glyphicon-eye-open"></span>
@@ -82,9 +97,9 @@
         </div>
 
         <div class="row navbar-text pull-right">
-                <a href="#/user/:uid">
-                    <span class="glyphicon glyphicon-user"></span>
-                </a>
-            </div>
+            <a href="#/user/:uid">
+                <span class="glyphicon glyphicon-user"></span>
+            </a>
+        </div>
     </div>
 </nav>

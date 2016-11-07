@@ -10,8 +10,13 @@
         vm.userId = parseInt($routeParams.uid);
 
         function init() {
-            vm.pages = PageService.findPageByWebsiteId(vm.websiteId, vm.userId);
+            var promise = PageService.findAllPagesForWebsite(vm.websiteId, vm.userId);
+            promise
+                .success(function(pages){
+                   vm.pages = pages;
+             });
         }
+
         init();
     }
 })();

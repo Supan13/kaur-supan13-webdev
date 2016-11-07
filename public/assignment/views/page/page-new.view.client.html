@@ -27,7 +27,7 @@
                 </a>
             </div>
             <div class="navbar-text pull-right" style="margin-right:0px">
-                <a ng-click="model.createPage(page)">
+                <a ng-click="model.createPage(page)"
                      <span class=" glyphicon glyphicon-ok">
                      </span>
                 </a>
@@ -45,62 +45,27 @@
     <div class="col-sm-4 hidden-xs">
         <div class="container-fluid">
             <ul class="list-group">
-                <li
-                        class="list-group-item">
-                    <a href="#/user/:uid/website/:wid/page/:pid/widget">
-                        Blog Post
+                <li ng-repeat="page in model.pages" class="list-group-item">
+                    <a href="#">
+                        {{page.name}}
                     </a>
-                    <a href="#/user/:uid/website/:wid/page/:pid">
-                        <span class="glyphicon glyphicon-cog pull-right"></span>
-                    </a>
-                </li>
-
-                </li>
-
-                <li class="list-group-item">
-                    <a href="#/user/:uid/website/:wid/page/:pid/widget">
-                        Blogs
-                    </a>
-                    <a href="#/user/:uid/website/:wid/page/:pid">
-                        <span class="glyphicon glyphicon-cog pull-right"></span>
-                    </a>
-                </li>
-                <li class="list-group-item">
-                    <a href="#/user/:uid/website/:wid/page/:pid/widget">
-                        Home
-                    </a>
-                    <a href="#/user/:uid/website/:wid/page/:pid">
-                        <span class="glyphicon glyphicon-cog pull-right"></span>
-                    </a>
-                </li>
-                <li class="list-group-item">
-                    <a href="#/user/:uid/website/:wid/page/:pid/widget">
-                        About
-                    </a>
-                    <a href="#/user/:uid/website/:wid/page/:pid">
-                        <span class="glyphicon glyphicon-cog pull-right"></span>
-                    </a>
-                </li>
-                <li class="list-group-item">
-                    <a href="#/user/:uid/website/:wid/page/:pid/widget">
-                        Contact Us
-                    </a>
-                    <a href="#/user/:uid/website/:wid/page/:pid">
+                    <a href="#/user/:uid/website/:wid">
                         <span class="glyphicon glyphicon-cog pull-right"></span>
                     </a>
                 </li>
             </ul>
         </div>
     </div>
+
     <div class="col-sm-8">
         <form>
             <div class="form-group" style="margin-right: 0px">
                 <label for="pagename">Name</label>
-                <input type="text" class="form-control" id="pagename" placeholder="Page Name">
+                <input ng-model="page.name" type="text" class="form-control" id="pagename" placeholder="Page Name">
             </div>
             <div class="form-group">
                 <label for="title">Title</label>
-                <input type="text" class="form-control" id="title" placeholder="Page Title">
+                <input ng-model="page.title"type="text" class="form-control" id="title" placeholder="Page Title">
             </div>
         </form>
     </div>

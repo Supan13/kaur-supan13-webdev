@@ -9,21 +9,38 @@
         var pageId = parseInt($routeParams.pid);
         var userId = parseInt($routeParams.uid);
         vm.updatePage = updatePage;
-        vm.removePage = removePage;
+        vm.deletePage = deletePage;
 
         function init() {
-            vm.page = PageService.findPageById(pageId);
+            var promise = PageService.findAllPagesForWebsite(websiteId, userId);
+            promise
+                .success(function(pages){
+                    vm.pages = pages;
+                });
         }
+
         init();
 
-        function updatePage(page) {
-            PageService.updatePage(page);
-            $location.url("/user/"+userId+"/website" +websiteId + "/page");
+
+        function updatePage() {
+            PageService
+                .updatePage(pageId)
+                .success( function(){
+                    $location.url("/user/"+userId+"/website/" +websiteId + "/page");
+                })
+                .error (function(){
+                })
         }
 
-        function removePage(pid) {
-            PageService.removePage(pid);
-            $location.url("/user/"+userId + "/website" + websiteId + "/page");
+        function deletePage() {
+            PageService
+                .deletePage(pageId)
+                .success( function(){
+                    $location.url("/user/"+userId + "/website/" + websiteId + "/page");
+                })
+                .error (function() {
+                });
+           }
         }
-    }
+
 })();

@@ -18,9 +18,17 @@
 
         var api = {
             findWidgetsForPage: findWidgetsForPage,
-            findWidgetById: findWidgetById
+            findWidgetById: findWidgetById,
+            sort: sort
         };
         return api;
+
+        function sort(start, end){
+            var url = "/page/:pageId/widget?start=index1&end=index2";
+            url = url.replace("index1", start)
+                .replace("index2", end);
+                 $http.put(url);
+        }
 
         function findWidgetById(wgid) {
             for(var w in widgets) {

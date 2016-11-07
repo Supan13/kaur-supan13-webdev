@@ -8,21 +8,37 @@
         var userId    = parseInt($routeParams.uid);
         var websiteId = parseInt($routeParams.wid);
         vm.updateWebsite = updateWebsite;
-        vm.removeWebsite = removeWebsite;
+        vm.deleteWebsite = deleteWebsite;
 
         function init() {
-            vm.website = WebsiteService.findWebsiteById(websiteId);
+            var promise = WebsiteService.findWebsitesForUser(userId);
+            promise
+                .success(function(websites){
+                    vm.websites = websites;
+                });
         }
         init();
 
-        function updateWebsite(website) {
-            WebsiteService.updateWebsite(website);
-            $location.url("/user/"+userId+"/website");
+
+
+        function updateWebsite() {
+            WebsiteService
+                .updateWebsite(websiteId)
+                .success( function(){
+                    $location.url("/user/"+userId+"/website");
+                })
+                .error (function(){
+                });
         }
 
-        function removeWebsite(wid) {
-            WebsiteService.removeWebsite(wid);
-            $location.url("/user/"+userId+"/website");
+        function deleteWebsite() {
+            WebsiteService
+                .deleteWebsite(websiteId)
+                .success (function(){
+                    $location.url("/user/"+userId+"/website");
+                })
+                .error (function(){
+                });
         }
     }
 })();

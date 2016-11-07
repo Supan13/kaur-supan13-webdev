@@ -3,18 +3,19 @@
         .module("WebAppMaker")
         .factory("PageService", PageService);
 
-    function PageService() {
+    function PageService($http) {
+
         var pages = [
 
-            { "_id": "321", "name": "Post 1", "websiteId": "456", "description": "Lorem" },
-            { "_id": "432", "name": "Post 2", "websiteId": "456", "description": "Lorem" },
-            { "_id": "543", "name": "Post 1", "websiteId": "789", "description": "Lorem" },
-            { "_id": "523", "name": "Post 1", "websiteId": "567", "description": "Lorem" },
-            { "_id": "513", "name": "Post 1", "websiteId": "678", "description": "Lorem" }
-        ]
+            {"_id": "321", "name": "Post 1", "websiteId": "456", "description": "Lorem"},
+            {"_id": "432", "name": "Post 2", "websiteId": "456", "description": "Lorem"},
+            {"_id": "543", "name": "Post 1", "websiteId": "789", "description": "Lorem"},
+            {"_id": "523", "name": "Post 1", "websiteId": "567", "description": "Lorem"},
+            {"_id": "513", "name": "Post 1", "websiteId": "678", "description": "Lorem"}
+        ];
 
         var api = {
-            findPageByWebsiteId: findPageByWebsiteId,
+            findAllPagesForWebsite: findAllPagesForWebsite,
             findPageById: findPageById,
             createPage: createPage,
             updatePage: updatePage,
@@ -23,23 +24,19 @@
         return api;
 
         function deletePage(pid) {
-            for (var p in pages) {
-                if (pages[p]._id == pid) {
-                    pages.splice(p, 1);
-                }
-            }
+            var url = "/api/page/" + pid;
+            return $http.delete(url);
         }
+
 
         function updatePage(page) {
-            for (var p in pages) {
-                if (pages[p]._id == page._id) {
-                    pages[p] = page;
-                }
-            }
+            var url = "/api/page/" + pid;
+            return $http.delete(url);
         }
 
-        function createPage(page) {
-            pages.push(page);
+        function createPage(wid, page) {
+            var url = "/api/website/"+wid+"/page";
+            return $http.post(url, page);
         }
 
         function findPageById(pid) {
@@ -51,14 +48,9 @@
             return null;
         }
 
-        function findPageByWebsiteId(wid) {
-            var result = [];
-            for(var p in pages) {
-                if(pages[p].websiteId == wid) {
-                    result.push(pages[p]);
-                }
-            }
-            return result;
+        function findAllPagesForWebsite(wid, uid) {
+            var url = "/api/website/"+wid+"/page";
+            return $http.get(url);
 
         }
 

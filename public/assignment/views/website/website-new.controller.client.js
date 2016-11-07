@@ -9,16 +9,23 @@
         vm.createWebsite = createWebsite;
 
         function init() {
-            vm.websites = WebsiteService.findWebsitesForUser(userId);
+            var promise = WebsiteService.findWebsitesForUser(userId);
+            promise
+                .success(function(websites){
+                    vm.websites = websites;
+                });
         }
+
         init();
 
         function createWebsite(website) {
             website._id = (new Date()).getTime();
-            website.uid = userId;
-            console.log(website);
-            WebsiteService.createWebsite(website);
-            $location.url("/user/"+userId+"/website");
+            website.developerId = userId;
+            WebsiteService
+                .createWebsite(userId, website)
+                .success(function(website){
+                $location.url("/user/"+userId+"/website");
+            });
         }
     }
 })();
