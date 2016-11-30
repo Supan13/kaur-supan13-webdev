@@ -1,56 +1,19 @@
-<nav class="navbar navbar-default navbar-fixed-top ">
-    <div class="row container-fluid">
-        <div class="navbar-text pull-left" style="margin-left:0px">
-            <a href="#/user/:uid/website/:wid/page/:pid/widget"
-                     <span class=" glyphicon glyphicon-chevron-left">
-                     </span>
-            </a>
-        </div>
-        <div class="navbar-text pull-right">
-            <a href="#/user/:uid/website/:wid/page/:pid/widget"">
-                     <span class=" glyphicon glyphicon-ok">
-                     </span>
-            </a>
-        </div>
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#/user/:uid/website/:wid/page/:pid/widget/:wgid/youtube">
-                Widget Edit
-            </a>
-        </div>
-    </div>
-</nav>
-
 <form>
-    <div class="form-group" style="margin-right: 0px">
-        <label for="widgetname">Name</label>
-        <input type="text" class="form-control" id="widgetname">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input ng-model="model.widget.name" type="text" class="form-control" id="name" placeholder="{{model.widget.name}}">
     </div>
     <div class="form-group">
         <label for="text">Text</label>
-        <input type="text" class="form-control" id="text">
+        <input ng-model="model.widget.text" type="email" class="form-control" id="text" placeholder="{{model.widget.text}}">
     </div>
     <div class="form-group">
         <label for="url">URL</label>
-        <input type="integer" class="form-control" id="url" placeholder="https://www.youtube.com/watch?v=H8rHarp1GEE&index=1&list=PLECC9B734DFC99776">
+        <input ng-model="model.widget.url" type="text" class="form-control" id="url" placeholder="{{model.widget.url}}">
     </div>
     <div class="form-group">
         <label for="width">Width</label>
-        <input type="integer" class="form-control" id="width" placeholder="100%">
+        <input ng-model="model.widget.width" type="text" class="form-control" id="width" placeholder="{{model.widget.width}}">
     </div>
 </form>
-<a class="btn btn-danger  btn-block"
-   href="#/user/:uid/website/:wid/page/:pid/widget">Delete
-</a>
-
-<nav class="navbar navbar-default navbar-fixed-bottom ">
-    <div class="container-fluid">
-        <div class="row navbar-text pull-right">
-            <div class="col-xs-12 text-center">
-                <a href="#/user/:uid">
-                    <span class="glyphicon glyphicon-user"></span>
-                </a>
-            </div>
-        </div>
-    </div>
-</nav>
 

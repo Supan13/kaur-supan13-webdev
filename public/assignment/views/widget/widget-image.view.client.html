@@ -1,48 +1,11 @@
-<nav class="navbar navbar-default navbar-fixed-top ">
-    <div class="row container-fluid">
-        <div class="navbar-text pull-left" style="margin-left:0px">
-            <a href="#/user/:uid/website/:wid/page/:pid/widget">
-                     <span class=" glyphicon glyphicon-chevron-left">
-                     </span>
-            </a>
-        </div>
-        <div class="navbar-text pull-right">
-            <a href="#/user/:uid/website/:wid/page/:pid/widget">
-                     <span class=" glyphicon glyphicon-ok">
-                     </span>
-            </a>
-        </div>
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#/user/:uid/website/:wid/page/:pid/widget/:wgid/image">
-                Widget Edit
-            </a>
-        </div>
-    </div>
-</nav>
 
-
-
-
-<form action="/api/upload"  class="form-group" style="margin-right: 0px" method="post" enctype="multipart/form-data">
-        <input  name="myFile"   type="file" class="form-control"/>
-        <input  name="width"    value="{{model.widget.width}}" style="display: none"/>
-        <input  name="widgetId" value="{{model.widget._id}}"   style="display: none"/>
-        <button type="submit"   class="btn btn-block btn-primary">Upload Image</button>
+<form action="/api/upload"  method="post" enctype="multipart/form-data">
+    <input  name="myFile"   type="file" class="form-control"/>
+    <input  name="width"    value="{{model.widget.width}}" style="display: none"/>
+    <input  name="widgetId" value="{{model.widget._id}}"   style="display: none"/>
+    <input  name="developerId" value="{{model.uid}}"     style="display: none"/>
+    <input  name="pageId" value="{{model.pid}}"     style="display: none"/>
+    <input  name="websiteId" value="{{model.wid}}"     style="display: none"/>
+    <button type="submit"   class="btn btn-block btn-primary">Upload Image</button>
 </form>
-
-    <a class="btn btn-danger  btn-block"
-     href="#/user/:uid/website/:wid/page/:pid/widget">Delete
-     </a>
-
-<nav class="navbar navbar-default navbar-fixed-bottom ">
-    <div class="container-fluid">
-        <div class="row navbar-text pull-right">
-            <div class="col-xs-12 text-center">
-                <a href="#/user/:uid">
-                    <span class="glyphicon glyphicon-user"></span>
-                </a>
-            </div>
-        </div>
-    </div>
-</nav>
 

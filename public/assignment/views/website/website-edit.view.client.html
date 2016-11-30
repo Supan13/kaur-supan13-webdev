@@ -2,13 +2,13 @@
     <div class="row container-fluid">
         <div class="col-sm-4 hidden-xs">
             <div class="navbar-text pull-left">
-                <a href="#/user/{{model.userId}}">
+                <a href="#/user/{{model.userId}}/website">
                      <span class=" glyphicon glyphicon-chevron-left">
                      </span>
                 </a>
             </div>
             <div class="navbar-header">
-                <a class="navbar-brand" href="##/user/{{model.userId}}/website">
+                <a class="navbar-brand" href="#">
                     Websites
                 </a>
             </div>
@@ -22,7 +22,7 @@
 
         <div class="col-sm-8">
             <div class="navbar-text pull-left" style="margin-left:0px">
-                <a href="#/user/:uid/website">
+                <a href="#/user/{{model.userId}}/website">
                      <span class=" glyphicon glyphicon-chevron-left">
                      </span>
                 </a>
@@ -47,10 +47,10 @@
         <div class="container-fluid">
             <ul class="list-group">
                 <li ng-repeat="website in model.websites" class="list-group-item">
-                    <a href="#">
+                    <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page">
                         {{website.name}}
                     </a>
-                    <a href="#/user/:uid/website/:wid">
+                    <a href="#/user/{{model.userId}}/website/{{website._id}}">
                         <span class="glyphicon glyphicon-cog pull-right"></span>
                     </a>
                 </li>

@@ -1,41 +1,22 @@
-<nav class="navbar navbar-default navbar-fixed-top ">
-    <div class="row container-fluid">
-            <div class="navbar-text pull-left" style="margin-left:0px">
-                <a href="#/user/:uid/website/:wid/page/:pid/widget">
-                     <span class=" glyphicon glyphicon-chevron-left">
-                     </span>
-                </a>
-            </div>
-            <div class="navbar-text pull-right">
-                <a href="#/user/:uid/website/:wid/page/:pid/widget">
-                     <span class=" glyphicon glyphicon-ok">
-                     </span>
-                </a>
-            </div>
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#/user/:uid/website/:wid/page/:pid/widget/:wgid/header">
-                Widget Edit
-            </a>
-        </div>
-    </div>
-</nav>
 
-    <form>
-        <div class="form-group" style="margin-right: 0px">
-            <label for="widgetname">Name</label>
-            <input type="text" class="form-control" id="widgetname">
-        </div>
-        <div class="form-group">
-            <label for="text">Text</label>
-            <input type="text" class="form-control" id="text">
-        </div>
-        <div class="form-group">
-            <label for="size">Size</label>
-            <input type="integer" class="form-control" id="size" placeholder="3">
-        </div>
-    </form>
-    <a class="btn btn-danger  btn-block"
-       href="#/user/:uid/website/:wid/page/:pid/widget">Delete
-    </a>
-</div>
-</div>
+<form>
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input ng-model="model.widget.name" type="text" class="form-control" id="name" placeholder="{{model.widget.name}}">
+    </div>
+    <div class="form-group">
+        <label for="text">Text</label>
+        <input ng-model="model.widget.text" type="text" class="form-control" id="text" placeholder="{{model.widget.text}}">
+    </div>
+    <div class="form-group">
+        <label for="size">Size</label>
+        <input ng-model="model.widget.size" type="text" class="form-control" id="size" placeholder="{{model.widget.size}}">
+    </div>
+
+</form>
+
+
+
+
+
+

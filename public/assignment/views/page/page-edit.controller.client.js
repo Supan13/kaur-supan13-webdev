@@ -5,18 +5,25 @@
 
     function PageEditController($routeParams, PageService, $location) {
         var vm = this;
-        var websiteId    = parseInt($routeParams.wid);
-        var pageId = parseInt($routeParams.pid);
-        var userId = parseInt($routeParams.uid);
+        var websiteId    = $routeParams.wid;
+        var pageId = $routeParams.pid;
+        var userId = $routeParams.uid;
         vm.updatePage = updatePage;
         vm.deletePage = deletePage;
 
         function init() {
-            var promise = PageService.findAllPagesForWebsite(websiteId, userId);
-            promise
-                .success(function(pages){
-                    vm.pages = pages;
+            PageService
+                .findAllPagesForWebsite(websiteId,userId)
+                .success(function(website){
+                    vm.pages = website.pages;
                 });
+
+            PageService
+                .findPageById(pageId)
+                .success(function(page) {
+                    vm.page = page;
+                });
+
         }
 
         init();

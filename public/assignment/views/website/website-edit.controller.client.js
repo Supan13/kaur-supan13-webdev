@@ -5,16 +5,16 @@
 
     function WebsiteEditController($routeParams, WebsiteService, $location) {
         var vm = this;
-        var userId    = parseInt($routeParams.uid);
-        var websiteId = parseInt($routeParams.wid);
+        var userId    = $routeParams.uid;
+        var websiteId = $routeParams.wid;
         vm.updateWebsite = updateWebsite;
         vm.deleteWebsite = deleteWebsite;
 
         function init() {
             var promise = WebsiteService.findWebsitesForUser(userId);
             promise
-                .success(function(websites){
-                    vm.websites = websites;
+                .success(function(user){
+                    vm.websites = user.websites;
                 });
         }
         init();

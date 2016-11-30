@@ -1,0 +1,46 @@
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="row container-fluid col-sm-12">
+        <div class="col-sm-12">
+            <div class="navbar-text pull-left" style="margin-left: 0px">
+                <a href="#/user/{{model.uid}}/website/{{model.wid}}/page/{{model.pid}}/widget">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+            </div>
+            <div class="navbar-text pull-right" style="margin-right: 0px;">
+                <a ng-click="model.updateWidget(model.widget.size, model.widget.width, model.widget.text, model.widget.url)">
+                    <span class="glyphicon glyphicon-ok"></span>
+                </a>
+            </div>
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#/user/{{model.uid}}/website/{{model.wid}}/page/{{model.pid}}/widget/{{model.wgid}}">
+                    Edit Widget
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+
+<div class="container-fluid">
+    <div ng-if="model.widget.widgetType">
+        <div ng-include="'views/widget/widget-'+model.widget.widgetType.toLowerCase()+'.view.client.html'"></div>
+        <p></p>
+        <a ng-click="model.deleteWidget(model.widget._id)"
+           class="btn btn-danger btn-block">Delete</a>
+    </div>
+</div>
+
+
+
+
+<nav class="navbar navbar-default navbar-fixed-bottom bg-primary">
+    <div class="container-fluid">
+        <div class="nav-bar header">
+            <a href="#/user/{{model.uid}}" class="navbar-brand pull-right">
+                <span class = "glyphicon glyphicon-user"></span>
+            </a>
+        </div>
+    </div>
+</nav>

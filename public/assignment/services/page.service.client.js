@@ -5,14 +5,6 @@
 
     function PageService($http) {
 
-        var pages = [
-
-            {"_id": "321", "name": "Post 1", "websiteId": "456", "description": "Lorem"},
-            {"_id": "432", "name": "Post 2", "websiteId": "456", "description": "Lorem"},
-            {"_id": "543", "name": "Post 1", "websiteId": "789", "description": "Lorem"},
-            {"_id": "523", "name": "Post 1", "websiteId": "567", "description": "Lorem"},
-            {"_id": "513", "name": "Post 1", "websiteId": "678", "description": "Lorem"}
-        ];
 
         var api = {
             findAllPagesForWebsite: findAllPagesForWebsite,
@@ -20,6 +12,7 @@
             createPage: createPage,
             updatePage: updatePage,
             deletePage: deletePage
+
         };
         return api;
 
@@ -30,8 +23,8 @@
 
 
         function updatePage(page) {
-            var url = "/api/page/" + pid;
-            return $http.delete(url);
+            var url = "/api/page/" + page._id;
+            return $http.put(url, page);
         }
 
         function createPage(wid, page) {
@@ -40,15 +33,11 @@
         }
 
         function findPageById(pid) {
-            for (var p in pages) {
-                if (pages[p]._id == pid) {
-                    return pages[p];
-                }
-            }
-            return null;
+           var url = "/api/page/" +pid;
+            return $http.get(url);
         }
 
-        function findAllPagesForWebsite(wid, uid) {
+        function findAllPagesForWebsite(wid) {
             var url = "/api/website/"+wid+"/page";
             return $http.get(url);
 

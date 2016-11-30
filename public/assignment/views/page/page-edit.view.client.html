@@ -2,38 +2,38 @@
     <div class="row container-fluid">
         <div class="col-sm-4 hidden-xs">
             <div class="navbar-text pull-left" style="margin-left:0px">
-                <a href="#/user/:uid/website/:wid/page">
+                <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page">
                      <span class=" glyphicon glyphicon-chevron-left">
                      </span>
                 </a>
             </div>
             <div class="navbar-text pull-right">
-                <a href="#/user/:uid/website/:wid/page/new">
+                <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/new">
                      <span class=" glyphicon glyphicon-plus">
                      </span>
                 </a>
             </div>
             <div class="navbar-header">
-                <a class="navbar-brand" href="#/user/:uid/website/:wid/page">
+                <a class="navbar-brand" href="#/user/{{model.userId}}/website/{{model.websiteId}}/page">
                     Pages
                 </a>
             </div>
         </div>
         <div class="col-sm-8">
             <div class="navbar-text pull-left" style="margin-left:0px">
-                <a href="#/user/:uid/website/:wid/page">
+                <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page">
                      <span class=" glyphicon glyphicon-chevron-left">
                      </span>
                 </a>
             </div>
             <div class="navbar-text pull-right" style="margin-right:0px">
-                <a ng-click="model.updatePage(model.page)">
+                <a ng-click="model.updatePage(page)">
                      <span class=" glyphicon glyphicon-ok">
                      </span>
                 </a>
             </div>
             <div class="navbar-header">
-                <a class="navbar-brand" href="#/user/:uid/website/:wid/page/:pid">
+                <a class="navbar-brand" href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{page._id}}">
                     Edit Page
                 </a>
             </div>
@@ -46,18 +46,15 @@
         <div class="container-fluid">
             <ul class="list-group">
                 <li ng-repeat="page in model.pages" class="list-group-item">
-                    <a href="#">
-                        {{page.name}}
+                    <a href="#">{{page.name}}
                     </a>
-                    <a href="#/user/:uid/website/:wid">
+                    <a href="#/user/{{model.userId}}/website/{{model.websiteId}}">
                         <span class="glyphicon glyphicon-cog pull-right"></span>
                     </a>
                 </li>
             </ul>
         </div>
     </div>
-
-
 
 
     <div class="col-sm-8">
@@ -71,7 +68,7 @@
                 <input ng-model="model.page.title"type="text" class="form-control" id="title" placeholder="Page Title">
             </div>
         </form>
-        <a ng-click="model.deletePage(model.page._id)"
+        <a ng-click="model.deletePage(page._id)"
          class="btn btn-danger btn-block">Delete
         </a>
     </div>
@@ -82,7 +79,7 @@
     <div class="container-fluid">
         <div class="row navbar-text pull-right">
             <div class="col-xs-12 text-center">
-                <a href="#/user/:uid">
+                <a href="#/user/{{model.userId}}">
                     <span class="glyphicon glyphicon-user"></span>
                 </a>
             </div>

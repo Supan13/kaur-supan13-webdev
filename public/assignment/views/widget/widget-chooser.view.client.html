@@ -1,122 +1,55 @@
 <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-        <div class ="navbar-text pull-left">
-            <a href="#/user/:uid/website/:wid/page/:pid/widget" class="navbar-link">
-                    <span class = "glyphicon glyphicon-chevron-left">
-                    </span>
-            </a>
-        </div>
-        <div>
-            <a class="navbar-header navbar-brand" href="#/user/:uid/website/:wid/page/:pid/widget/new">
-                Choose Widget
-            </a>
-        </div>
-    </div>
-</nav>
+    <div class="row container-fluid">
+        <div class="col-sm-12">
+            <div class="navbar-text pull-left" style="margin-left: 0px">
+                <a href="#/user/{{model.uid}}/website/{{model.wid}}/page/{{model.pid}}/widget">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+            </div>
 
-<div class="container-fluid">
-    <ul class="list-group">
-        <li
-                class="list-group-item">
-            <a href="#/user/:uid/website/:wid/page/:pid/widget/new">
-                Header
-            </a>
-            <a href="#/user/:uid/website/:wid/page/:pid/widget/:wgid/header">
-                <span class="glyphicon glyphicon-cog pull-right"></span>
-            </a>
-        </li>
-
-        </li>
-
-        <li class="list-group-item">
-            <a href="#/user/:uid/website/:wid/page/:pid/widget/new">
-                Label
-            </a>
-            <a href="#/user/:uid/website/:wid/page/:pid/widget/new">
-                <span class="glyphicon glyphicon-cog pull-right"></span>
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="#/user/:uid/website/:wid/page/:pid/widget/new">
-                HTML
-            </a>
-            <a href="#/user/:uid/website/:wid/page/:pid/widget/new">
-                <span class="glyphicon glyphicon-cog pull-right"></span>
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="#/user/:uid/website/:wid/page/:pid/widget/new">
-                Text Input
-            </a>
-            <a href="#/user/:uid/website/:wid/page/:pid/widget/new">
-                <span class="glyphicon glyphicon-cog pull-right"></span>
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="#/user/:uid/website/:wid/page/:pid/widget/new">
-                Link
-            </a>
-            <a href="#/user/:uid/website/:wid/page/:pid/widget/new">
-                <span class="glyphicon glyphicon-cog pull-right"></span>
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="#/user/:uid/website/:wid/page/:pid/widget/new">
-                Button
-            </a>
-            <a href="#/user/:uid/website/:wid/page/:pid/widget/new">
-                <span class="glyphicon glyphicon-cog pull-right"></span>
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="#/user/:uid/website/:wid/page/:pid/widget/new">
-                Image
-            </a>
-            <a href="#/user/:uid/website/:wid/page/:pid/widget/:wgid/image">
-                <span class="glyphicon glyphicon-cog pull-right"></span>
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="#/user/:uid/website/:wid/page/:pid/widget/new">
-                You Tube
-            </a>
-            <a href="#/user/:uid/website/:wid/page/:pid/widget/:wgid/youtube">
-                <span class="glyphicon glyphicon-cog pull-right"></span>
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="#/user/:uid/website/:wid/page/:pid/widget/new">
-                Data Table
-            </a>
-            <a href="#/user/:uid/website/:wid/page/:pid/widget/new">
-                <span class="glyphicon glyphicon-cog pull-right"></span>
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="#/user/:uid/website/:wid/page/:pid/widget/new">
-                Repeater
-            </a>
-            <a href="#/user/:uid/website/:wid/page/:pid/widget/new">
-                <span class="glyphicon glyphicon-cog pull-right"></span>
-            </a>
-        </li>
-    </ul>
-</div>
-<div class="col-sm-8 pull-right" style="padding-left: 30px;padding-right: 0px;">
-    <form>
-        <div ng-include="'views/widget/widget-'+model.widget.widgetType+'-editor.html'"></div>
-    </form>
-</div>
-</div>
-
-<nav class="navbar navbar-default navbar-fixed-bottom ">
-    <div class="container-fluid">
-        <div class="row navbar-text pull-right">
-            <div class="col-xs-12 text-center">
-                <a href="#/user/:uid">
-                    <span class="glyphicon glyphicon-user"></span>
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#/user/{{model.uid}}/website/{{model.wid}}/page/{{model.pid}}/widget/new">
+                    Choose Widget
                 </a>
             </div>
         </div>
     </div>
 </nav>
+
+<div class="row container-fluid">
+    <ul class="list-group">
+
+        <li class="list-group-item">
+            <a ng-click="model.createWidget('HEADER')">Header</a>
+        </li>
+        <li class="list-group-item">
+            <a ng-click="model.createWidget('HTML')">HTML</a>
+        </li>
+        <li class="list-group-item">
+            <a ng-click="model.createWidget('IMAGE')">Image</a>
+        </li>
+        <li class="list-group-item">
+            <a ng-click="model.createWidget('YOUTUBE')">YouTube</a>
+        </li>
+        <li class="list-group-item">
+            <a ng-click="model.createWidget('TEXT')">Text Input</a>
+        </li>
+
+    </ul>
+
+</div>
+
+<nav class="navbar navbar-default navbar-fixed-bottom bg-primary">
+    <div class="container-fluid">
+        <div class="nav-bar header">
+            <a href="#/user/{{model.uid}}" class="navbar-brand pull-right">
+                <span class = "glyphicon glyphicon-user"></span>
+            </a>
+        </div>
+    </div>
+</nav>
+
+
+
+
+
