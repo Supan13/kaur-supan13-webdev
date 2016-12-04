@@ -75,20 +75,6 @@ module.exports = function(app, model) {
                 })
     }
 
-               // function(err) {
-               //     if (err) { return done(err); }
-             //   }
-           // )
-          //  .then(
-               // function(user){
-                 //   return done(null, user);
-               // },
-               // function(err){
-             //       if (err) { return done(err); }
-           //     }
-         //   );
-
-
 
     passport.use(new GoogleStrategy(googleConfig, googleStrategy));
 
@@ -113,7 +99,7 @@ module.exports = function(app, model) {
                                 token: token
                             }
                         };
-                        return userModel.createUser(newGoogleUser);
+                        return model.userModel.createUser(newGoogleUser);
                     }
                 },
                 function(err) {
