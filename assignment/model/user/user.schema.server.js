@@ -7,8 +7,19 @@ module.exports = function() {
          password : String,
          firstName : String,
          lastName : String,
+          google : {
+             id:String,
+             email:String,
+            token:String
+        },
+        facebook: {
+            id:    String,
+            token: String,
+            displayName : String
+        },
          email :String,
          phone :String,
+       //  role:{type:String, enum:['ADMIN', 'STUDENT','FACULTY']},
          websites :[{type: mongoose.Schema.Types.ObjectId,ref:'websiteModel'}],
          dateCreated: {type: Date, default: Date.now}
     }, {collection:"user"});

@@ -4,17 +4,19 @@
         .controller("ProfileController", ProfileController);
 
 
-    function ProfileController($routeParams, UserService, $location) {
+    function ProfileController($routeParams, UserService, $location, $rootScope) {
         var vm = this;
 
-        vm.userId = $routeParams['uid'];
+       // vm.userId = $rootScope.currentUser._id;
         vm.updateUser = updateUser;
         vm.deleteUser = deleteUser;
+        vm.logout = logout;
 
         function init() {
 
-            var promise = UserService.findUserById(vm.userId);
-
+            var promise = UserService
+             //  .findUserById(vm.userId)
+               .findCurrentUser()
             promise
                 .success( function(user){
                     if (user != '0') {
@@ -30,6 +32,14 @@
         function updateUser(){
                UserService.updateUser(vm.user);
         }
+
+       function logout(){
+            UserService.logout()
+                .success(function() {
+                    $location.url("/login");
+
+      });
+       }
 
         function deleteUser(){
             UserService

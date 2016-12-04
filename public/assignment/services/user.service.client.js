@@ -7,14 +7,49 @@
     function UserService($http) {
 
         var api = {
-            findUserByCredentials : findUserByCredentials,
-            findUserById : findUserById,
+           findUserByCredentials : findUserByCredentials,
+           findUserById : findUserById,
             createUser : createUser,
             findUserByUsername : findUserByUsername,
             updateUser : updateUser,
-            deleteUser : deleteUser
+            deleteUser : deleteUser,
+            login:login,
+            checkLogin:checkLogin,
+            logout:logout,
+            register:register,
+           findCurrentUser: findCurrentUser
     };
         return api;
+
+       function findCurrentUser(){
+          var url = "/api/user";
+           return $http.get(url);
+        }
+
+        function register(username,password){
+            var user = {
+                username:username,
+                password:password
+     };
+            return $http.post("/api/register", user);
+        }
+
+        function checkLogin(){
+            return $http.post("/api/checkLogin");
+        }
+
+        function logout(){
+           return $http.post("/api/logout");
+        }
+
+        function login(username,password) {
+                 var user = {
+                     username:username,
+                     password:password
+                 };
+                return $http.post("/api/login", user);
+       }
+
 
         function findUserByCredentials(username, password) {
             var url = '/api/user?username=' + username + '&password=' + password;
@@ -39,12 +74,16 @@
             return $http.put(url, user);
         }
 
-        function createUser(username, password) {
+       function createUser(username, password) {
             var user = {
                 username : username,
                 password : password
-            };
+           };
            return $http.post("/api/user", user);
+       }
+
+        function findUser() {
+            return $http.get("/api/user");
         }
 
         function deleteUser(uid) {

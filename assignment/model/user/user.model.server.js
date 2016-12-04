@@ -8,6 +8,8 @@ module.exports = function() {
 
         createUser : createUser,
         findUserById : findUserById,
+        findUserByGoogleId: findUserByGoogleId,
+        findUserByFacebookId: findUserByFacebookId,
         updateUser : updateUser,
         findUserByCredentials : findUserByCredentials,
         findWebsitesForUser : findWebsitesForUser,
@@ -20,6 +22,17 @@ module.exports = function() {
 
     function setModel(_model) {
         model = _model;
+    }
+
+  function findUserByFacebookId(facebookId){
+     return userModel
+           .findOne({'facebook.id': facebookId});
+    }
+
+    function findUserByGoogleId(googleId){
+       return userModel
+            .findOne({"google.id":googleId})
+
     }
 
      function findWebsitesForUser(userId){
@@ -38,7 +51,7 @@ module.exports = function() {
 
 
     function findUserByCredentials(username, password){
-          return userModel.find({
+          return userModel.findOne({
               username: username,
               password:password
           });
@@ -46,7 +59,7 @@ module.exports = function() {
     }
 
    function findUserByUsername(username) {
-       return userModel.find({
+       return userModel.findOne({
            username: username
         });
     }
@@ -68,7 +81,7 @@ module.exports = function() {
 
 
     function findUserById(userId){
-         userModel.find({_id:userId})
+        userModel.find({_id:userId})
         return userModel.findById(userId);
 
     }
@@ -77,6 +90,7 @@ module.exports = function() {
         return userModel.create(user);
 
     }
+
 
 };
 
