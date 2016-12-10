@@ -1,0 +1,217 @@
+<div class="container-fluid">
+    <h1> <a href="#/search/{{model.title}}">
+        <span class="glyphicon glyphicon-step-backward"></span>
+    </a>
+    {{model.movie.Title}}</h1>
+
+    <div class="row">
+      <div class="col-xs-6">
+          <div> Released date : {{model.movie.Released}}
+          </div>
+       <div> Genre: {{model.movie.Genre}}
+       </div>
+          <div> Runtime: {{model.movie.Runtime}}
+          </div>
+          <div> Plot : {{model.movie.Plot}}
+          </div>
+          <div> Directed by: {{model.movie.Director}}
+          </div>
+          <div> Actors:
+              <ul>
+                  <li ng-repeat="actor in model.movie.Actors.split(',')">
+                      {{actor}}
+                  </li>
+              </ul>
+          </div>
+          <div> Rating : {{model.movie.Rated}}
+          </div>
+      </div>
+        <div class="col-xs-6">
+         <img ng-src="{{model.movie.Poster}}" height="300px">
+        </div>
+    </div>
+    <div>
+        <button ng-click="likeMovie(imdbID)">
+            <span class="glyphicon glyphicon-star-empty"></span>
+        </button>
+    </div>
+    <div class="form-group">
+        <label for="review">Review</label>
+        <input ng-model="model.review" type="text" class="form-control" id="review" placeholder="you can write a review">
+    </div
+</div>
+
+//
+<div class="container-fluid">
+
+    <a href = "#/home/{{model.title}}">
+
+        <span class = "glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <!--Movie Name -->
+    <h3 ><b>{{model.movie.title}} ({{model.movie.release_date  | date: 'yyyy'}})</b></h3>
+
+    <!-- Movie Genre and Release Date-->
+    <div class="row">
+        <div class="col-xs-6">
+            <h4  class="page-header"><b>Genre</b></h4>
+            <h5 ng-repeat="genre in model.movie.genres | limitTo:2">
+                {{genre.name}}
+            </h5>
+        </div>
+
+        <div class="col-xs-6">
+            <h4  class="page-header"><b>Release Date</b></h4>
+            <div ng-if="!model.released">
+                <br/><br/><br/>
+            </div>
+
+            <h5 ng-bind="model.movie.release_date | date: 'mediumDate'"></h5>
+        </div>
+    </div>
+
+    <!-- IMDB Rating and Film Nerd Rating -->
+    <p></p>
+    <div class="row">
+        <div class="col-xs-6">
+            <h4  class="page-header"><b>IMDB critics Rating</b></h4>
+            <div ng-model="model.movie.criticsRating"
+                 class="meter">
+
+                <meter class="meter" min="0" max="5" value="{{model.movie.criticsRating}}"></meter>
+                <p> <h5 class="rating">{{model.movie.criticsRating}}</h5>
+                </p>
+            </div>
+        </div>
+
+        <div class="col-xs-6">
+            <h4  class="page-header"><b>FilmNerd Rating</b></h4>
+            <div ng-model="model.movie.usersRating"
+                 class="meter">
+
+                <meter class="meter" min="0" max="5" value="{{model.avgRating}}"></meter>
+                <p> <h5 class="rating">{{model.avgRating}}</h5>
+                </p>
+            </div>
+
+        </div>
+    </div>
+    <p></p>
+    <div class="row">
+        <div class="col-sm-3">
+            <!-- Movie Poster-->
+            <div class="fill">
+                <img class="img paddingtop20" ng-src="https://image.tmdb.org/t/p/w300/{{model.movie.poster_path}}">
+            </div>
+            <!--<img class="img img-responsive profile" ng-src="https://image.tmdb.org/t/p/w300/{{model.movie.poster_path}}">-->
+
+        </div>
+
+        <p></p>
+        <!-- Youtube Trailer-->
+        <div class="col-sm-9">
+            <div class="video-container">
+                <iframe  width = "100%"
+                         ng-src="{{model.movie.video_path}}"
+                         frameborder="0" allowfullscreen=""></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Movie Summary-->
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="page-header">Summary</h3>
+            <p class="justifytext">{{model.movie.overview}}</p>
+        </div>
+    </div>
+
+    <!-- Cast of the Movie -->
+    <div class="row">
+        <div class="col-xs-12 ">
+            <h3 class="page-header">Cast</h3>
+            <h2></h2>
+            <ul class="list-inline">
+                <li class="w92"  ng-repeat="actor in model.movie.credits.cast"
+                    ng-if="actor.profile_path">
+                    <a href="#/cast/{{actor.id}}">
+                        <img ng-src="https://image.tmdb.org/t/p/w92{{actor.profile_path}}"></a>
+                    <a class="title makeblack" href="#/cast/{{actor.id}}">{{actor.name}}</a>
+                    <!-- replace p with a to move to cast page -->
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+//
+
+<div class="container-fluid">
+    <h1>
+        <a href="#/home/{{model.movie.title}}">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+
+        {{model.movie.title}}
+    </h1>
+
+    <div class="row">
+
+        <div class="col-xs-6">
+
+            <div ng-repeat="crew in model.movie.credits.crew" ng-if="model.showDirector(crew.job)">
+                Directed by: {{crew.name}}
+            </div>
+            <div>
+                Rated: {{model.movie.vote_average}}
+            </div>
+
+            <div>
+                Runtime(minutes): {{model.movie.runtime}}
+            </div>
+
+            <div ng-repeat="genre in model.genres">
+                Genre: {{genre.name}}
+            </div>
+
+            <div>
+                Released: {{model.movie.release_date}}
+            </div>
+
+            <div>
+                Plot: {{model.movie.overview}}
+            </div>
+
+        </div>
+
+        <div class="col-xs-6">
+            <img ng-src="https://image.tmdb.org/t/p/w500/{{model.movie.poster_path}}" height="400px"/>
+        </div>
+
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <div>
+        <div class="video-container">
+            <iframe  width = "100%"
+                     ng-src="{{model.movie.video_path}}"
+                     frameborder="0" allowfullscreen=""></iframe>
+        </div>
+    </div>
+
+    <div>
+        Actors:
+        <ul class="list-inline">
+            <li ng-repeat="actor in model.movie.credits.cast" ng-if="actor.profile_path">
+                {{actor.name}}
+                <img ng-src="https://image.tmdb.org/t/p/w500/{{actor.profile_path}}" height="100px"/>
+            </li>
+        </ul>
+    </div>
+
+
+</div>

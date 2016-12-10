@@ -33,6 +33,8 @@
                UserService.updateUser(vm.user);
         }
 
+
+
        function logout(){
             UserService.logout()
                 .success(function() {

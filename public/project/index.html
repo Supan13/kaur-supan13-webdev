@@ -1,12 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="MovieApp">
 <head>
     <meta charset="UTF-8">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../assignment/css/style.css" rel="stylesheet"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
+    <script src="app.js"></script>
+    <script src="config.js"></script>
+    <script src="views/search/search.controller.js"></script>
+    <script src="views/details/details.controller.js"></script>
+    <script src="views/user/user.controller.js"></script>
+    <script src="services/movie.service.js"></script>
+    <script src="services/user.service.js"></script>
     <title>Project Home Page</title>
-    <h1>Project Home Page</h1>
 </head>
 <body>
-
-
+  <div ng-view></div>
 </body>
 </html>
