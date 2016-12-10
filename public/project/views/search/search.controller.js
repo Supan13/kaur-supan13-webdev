@@ -19,11 +19,6 @@
             }
         }
 
-         //   MovieService.findNowPlaying()
-           //     .success(function(result){
-             //       vm.movies = result.results;
-               // })
-       // }
 
         init();
 

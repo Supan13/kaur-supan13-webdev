@@ -15,7 +15,6 @@ module.exports =function () {
         findUserByCredentials:findUserByCredentials,
         deleteUser : deleteUser,
         findUserByUsername :findUserByUsername,
-       // findAllWebsitesForUser:findAllWebsitesForUser,
         setModel:setModel
     };
 
@@ -25,14 +24,6 @@ module.exports =function () {
     function setModel(_model) {
         model = _model;
     }
-
-
-   // function findAllWebsitesForUser(userId) {
-     //   console.log( "userId:"+ userId);
-       // return UserModel.findById(userId)
-         //   .populate("websites","name")
-           // .exec();
-   // }
 
 
     function updateUser(userId, user) {

@@ -17,34 +17,3 @@ module.exports = function () {
 
     return UserSchema;
 };
-{
-
-    //  follows: [
-    //    {
-    //      userId: String,
-    //    username: String
-    // }
-    //  ],
-    //    rates
-
-//    [
-    //      {
-    //        movie_name: String,
-    //      movie_Id: String,
-    //    movie_rating: Number,
-    //  movie_url: String
-    // }
-    // ],
-
-//        reviews
-//:
-    //  [
-    //    {
-    //      movie_name: String,
-    //    movie_Id: String,
-    //  movie_review: String,
-    //movie_url: String,
-    //movie_flagged: String
-    // }
-    // ]
-}

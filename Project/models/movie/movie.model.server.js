@@ -9,9 +9,7 @@ module.exports =function () {
 
 
     var api = {
-        //createWebsite  : createWebsite,
-       // findWebsitesForUser :findWebsitesForUser,
-        setModel:setModel,
+        setModel:setModel
 
     };
 
