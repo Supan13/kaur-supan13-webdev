@@ -1,6 +1,7 @@
 /**
  * Created by supankaur on 12/7/16.
  */
+
 module.exports =function () {
     var model ={};
     var mongoose = require('mongoose');

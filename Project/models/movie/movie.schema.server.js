@@ -12,7 +12,7 @@ module.exports = function () {
         _user:[{ type: mongoose.Schema.Types.ObjectId, ref: 'userModel' }],
         dateCreated: {type: Date, default: Date.now}
 
-    },{collection:"movie"});
+    },{collection:"project.movie"});
 
     return MovieSchema;
 };

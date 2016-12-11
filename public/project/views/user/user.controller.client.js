@@ -1,6 +1,7 @@
 /**
  * Created by supankaur on 12/9/16.
  */
+
 (function () {
     angular
         .module("MovieApp")
@@ -25,27 +26,27 @@
         }
     }
 
-        function LoginController($location, UserService) {
-            var vm = this;
-            vm.login = function (username, password) {
-                UserService
-                    .login(username, password)
-                    .success(function (user) {
-                        if (user === '0') {
-                            vm.error = "No such user";
-                        } else {
-                            $location.url("/user/" + user._id);
-                        }
-                    })
+    function LoginController($location, UserService) {
+        var vm = this;
+        vm.login = function (username, password) {
+            UserService
+                .login(username, password)
+                .success(function (user) {
+                    if (user === '0') {
+                        vm.error = "No such user";
+                    } else {
+                        $location.url("/user/" + user._id);
+                    }
+                })
 
-                    .error(function () {
+                .error(function () {
 
-                    })
-            }
-
+                })
         }
 
-        function ProfileController($routeParams, UserService, $location) {
+    }
+
+    function ProfileController($routeParams, UserService, $location) {
         var vm = this;
 
         //vm.userId = $routeParams['uid'];
@@ -56,7 +57,7 @@
         function init() {
 
             var promise = UserService
-                //.findUserById(vm.userId);
+            //.findUserById(vm.userId);
                 .findCurrentUser()
             promise
                 .success(function (user) {
@@ -95,4 +96,4 @@
         }
 
     }
-    })();
+})();
