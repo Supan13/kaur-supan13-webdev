@@ -1,21 +1,33 @@
 module.exports = function(app, model) {
 
     var passport = require('passport');
+    var cookieParser = require('cookie-parser');
+    var session = require('express-session');
     var LocalStrategy = require('passport-local').Strategy;
     var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
     var FacebookStrategy = require('passport-facebook').Strategy;
     var bcrypt = require("bcrypt-nodejs");
 
+    app.use(session({
+        secret: 'this is the secret',
+        resave: true,
+        saveUnitialized: true
+    }));
+
+    app.use(cookieParser());
+    app.use(passport.initialize());
+    app.use(passport.session());
+
     var googleConfig = {
-        clientID     : process.env.GOOGLE_CLIENT_ID,
-        clientSecret : process.env.GOOGLE_CLIENT_SECRET,
-        callbackURL  : process.env.GOOGLE_CALLBACK_URL
+        clientID     : "290120442854-epd85nvked4n41kokm213pa7givrfevn.apps.googleusercontent.com",
+        clientSecret : "s-WU4EihoXH1PWg6w2DjN9nD",
+        callbackURL  : "http://localhost:3000/auth/google/callback"
     };
 
     var facebookConfig = {
-        clientID        : process.env.FACEBOOK_CLIENT_ID,
-        clientSecret    : process.env.FACEBOOK_CLIENT_SECRET,
-        callbackURL     : process.env.FACEBOOK_CALLBACK_URL
+        clientID        : "237171823363082",
+        clientSecret    : "779880df36d09151bea1e28d6805317c",
+        callbackURL     : "http://localhost:3000/auth/facebook/callback"
     };
 
     app.post('/api/user', createUser);
