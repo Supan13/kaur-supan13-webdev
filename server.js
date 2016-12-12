@@ -26,8 +26,8 @@ app.use(express.static(__dirname + '/public'));
 
 
 //require ("./test/app.js")(app);
-//require("./assignment/app.js")(app);
-require("./project/app.js")(app);
+require("./assignment/app.js")(app);
+//require("./project/app.js")(app);
 
 
 app.set('ipaddress', (process.env.IP));
