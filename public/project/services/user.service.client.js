@@ -1,95 +1,95 @@
 /**
  * Created by supankaur on 12/9/16.
  */
-(function () {
+(function() {
     angular
         .module("MovieApp")
         .factory("UserService", UserService);
 
-    function UserService($http) {
-
-        var api = {
-            findUserByCredentials : findUserByCredentials,
-            findUserById : findUserById,
-            createUser : createUser,
-            findUserByUsername : findUserByUsername,
-            updateUser : updateUser,
-            deleteUser : deleteUser,
-            logout:logout,
-            login:login,
-            checkLogin:checkLogin,
-            register:register,
-            findCurrentUser: findCurrentUser
+    function UserService($rootScope) {
+        var model = {
+            users: [
+                {username: "alice", password: "alice", roles: ["student"]},
+                {username: "bob", password: "bob", roles: ["faculty", "admin"]},
+                {username: "charlie", password: "charlie", roles: ["employee"]}
+            ],
+            createUser: createUser,
+            findUserByUsername: findUserByUsername,
+            findUserByCredentials: findUserByCredentials,
+            updateUser: updateUser,
+            setCurrentUser: setCurrentUser,
+            getCurrentUser: getCurrentUser
         };
-        return api;
-        function findCurrentUser(){
-            var url = "/api/user";
-            return $http.get(url);
+        return model;
+
+        function setCurrentUser (user) {
+            $rootScope.currentUser = user;
         }
 
-        function register(username,password){
+        function getCurrentUser () {
+            return $rootScope.currentUser;
+        }
+
+        function createUser (user) {
             var user = {
-                username:username,
-                password:password
+                username: user.username,
+                password: user.password
             };
-            return $http.post("/api/register", user);
+            model.users.push(user);
+            return user;
         }
 
-        function checkLogin(){
-            return $http.post("/api/checkLogin");
+        function findUserByUsername (username) {
+            for (var u in model.users) {
+                if (model.users[u].username === username) {
+                    return model.users[u];
+                }
+            }
+            return null;
         }
 
-        function login(username,password) {
-            var user = {
-                username:username,
-                password:password
-            };
-            return $http.post("/api/login", user);
+        function findUserByCredentials(credentials) {
+            for (var u in model.users) {
+                if (model.users[u].username === credentials.username &&
+                    model.users[u].password === credentials.password) {
+                    return model.users[u];
+                }
+            }
+            return null;
         }
 
-        function logout(){
-            return $http.post("/api/logout");
+        function updateUser (currentUser) {
+            var user = model.findUserByUsername (currentUser.username);
+            if (user != null) {
+                user.firstName = currentUser.firstName;
+                user.lastName = currentUser.lastName;
+                user.password = currentUser.password;
+                return user;
+            } else {
+                return null;
+            }
         }
-
-        function findUserByCredentials(username, password) {
-            var url = '/api/user?username=' + username + '&password=' + password;
-            return $http.get(url);
-        }
-
-        function findUserByUsername(username) {
-            var url = '/api/user?username='+username;
-            return $http.get(url);
-        }
-
-
-        function findUserById(userId) {
-            var url = "/api/user/"+userId;
-            return $http.get(url);
-
-        }
-
-        function updateUser(user) {
-            var url = "/api/user/"+ user._id;
-            return $http.put(url, user);
-        }
-
-        function createUser(username, password) {
-            var user = {
-                username : username,
-                password : password
-            };
-            return $http.post("/api/user", user);
-        }
-        function findUser() {
-            return $http.get("/api/user");
-        }
-
-        function deleteUser(uid) {
-            var url = "/api/user/" + uid;
-
-            return $http.delete(url);
-        }
-
     }
-
 })();
+
+//
+//(function() {
+  //  angular
+    //    .module("MovieApp")
+      //  .factory("UserService", UserService);
+
+//    function UserService($http){
+
+  //  var api = {
+    //    findUserByCredentials:findUserByCredentials
+  //  }
+
+//    return api;
+  //  function findUserByCredentials(credentials) {
+
+    //    console.log(credentials);
+      //  return $http.post("/api/user" + credentials);
+     //  }
+   // }
+
+//})();

@@ -13,7 +13,7 @@
         function init () {
             if (vm.title) {
                 // $location.url("/search/"+title);
-                //  $location.path("/home/"+vm.title);
+                // $location.path("/home/"+vm.title);
                 searchMovieByTitle(vm.title);
 
             }

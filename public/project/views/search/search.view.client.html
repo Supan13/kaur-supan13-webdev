@@ -1,20 +1,14 @@
 <div class="container-fluid">
-    <ul class="nav nav-tabs">
-        <li><a href="#/login">Login</a></li>
-        <li><a href="#/register">Register</a></li>
-        <li><a href="#/user/:uid">Profile</a></li>
-    </ul>
+
 
 
     <h1> Movie Search</h1>
-    <div class="col-lg-6">
-        <div class="input-group">
-            <input ng-model="model.title" type="text" class="form-control" placeholder="Search for movie title"/>
-            <span class="input-group-btn">
-        <button ng-click="model.searchMovieByTitle(model.title)" class="btn btn-primary" type="button">Search</button>
-      </span>
-        </div>
-    </div>
+
+            <input ng-model="model.title"
+                   class="form-control"
+                   placeholder="Batman"/>
+            <button ng-click="model.searchMovieByTitle(model.title)" class="btn btn-primary btn-block" type="button">Search</button>
+
         <table class="table">
             <thead>
             <tr>

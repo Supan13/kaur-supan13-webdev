@@ -1,22 +1,44 @@
 /**
  * Created by supankaur on 12/8/16.
  */
-(function () {
+(function(){
     angular
         .module("MovieApp")
-        .config(Config);
+        .config(configuration)
 
-    function Config($routeProvider) {
+    function configuration($routeProvider) {
         $routeProvider
-            .when("/", {
-                templateUrl: "views/search/search.view.client.html",
-                controller: "MovieSearchController",
+            .when("/home", {
+                templateUrl: "views/user/home/home.view.html"
+              //  resolve: {
+                //    getLoggedIn: getLoggedIn
+              //  }
+            })
+            .when("/login", {
+                templateUrl: "views/user/login/login.view.client.html",
+                controller: "LoginController",
                 controllerAs: "model"
+            })
+            .when("/register", {
+                templateUrl: "views/user/register/register.view.client.html",
+                controller: "RegisterController",
+                controllerAs: "model"
+            })
+            .when("/profile/:username?", {
+                templateUrl: "views/user/profile/profile.view.client.html",
+                controller: "ProfileController",
+                controllerAs: "model"
+              //  resolve: {
+                //    checkLoggedIn: checkLoggedIn
+               // }
             })
             .when("/search", {
                 templateUrl: "views/search/search.view.client.html",
                 controller: "MovieSearchController",
                 controllerAs: "model"
+               // resolve: {
+                 //   getLoggedIn: getLoggedIn
+              //  }
             })
             .when("/search/:title", {
                 templateUrl: "views/search/search.view.client.html",
@@ -28,56 +50,42 @@
                 controller: "MovieDetailsController",
                 controllerAs: "model"
             })
-            .when("/login", {
-                templateUrl: "views/user/login.view.client.html",
-                controller: "LoginController",
-                controllerAs: "model"
-            })
-            .when("/user/:uid", {
-                templateUrl: "views/user/profile.view.client.html",
-                controller:"ProfileController",
-                controllerAs: "model",
-                resolve: {
-                    checkLogin: checkLogin
-                }
-            })
-            .when("/user", {
-                templateUrl: "views/user/profile.view.client.html",
-                controller: "ProfileController",
-                controllerAs: "model",
-                resolve: {
-                    checkLogin: checkLogin
-                }
-            })
-            .when("/register", {
-                templateUrl: "views/user/register.view.client.html",
-                controller:"RegisterController",
-                controllerAs: "model"
-            })
-
-        function checkLogin($q, UserService, $location, $rootScope) {
-            var deferred = $q.defer();
-            UserService
-                .checkLogin()
-                .success(
-                    function (user) {
-                        if (user != '0') {
-                            $rootScope.currentUser = user;
-                            deferred.resolve();
-                        } else {
-                            $rootScope.currentUser = null;
-                            deferred.reject();
-                            $location.url("/login");
-                        }
-                    }
-                );
-            return deferred.promise;
-        }
-
+            .otherwise({
+                redirectTo: "/home"
+            });
     }
 
+  //  function getLoggedIn(UserService, $q) {
+    //    var deferred = $q.defer();
+//
+  //      UserService
+    //        .getCurrentUser()
+      //      .then(function(response){
+        //        var currentUser = response.data;
+          //      UserService.setCurrentUser(currentUser);
+            //    deferred.resolve();
+           // });
 
+//        return deferred.promise;
+  //  }
+
+  //  function checkLoggedIn(UserService, $q, $location) {
+
+    //    var deferred = $q.defer();
+
+      //  UserService
+        //    .getCurrentUser()
+          //  .then(function(response) {
+            //    var currentUser = response.data;
+              //  if(currentUser) {
+                //    UserService.setCurrentUser(currentUser);
+                  //  deferred.resolve();
+              //  } else {
+                //    deferred.reject();
+                  //  $location.url("/home");
+               // }
+           // });
+
+       // return deferred.promise;
+  //  }
 })();
-
-
-
