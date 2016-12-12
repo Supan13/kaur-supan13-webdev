@@ -49,9 +49,10 @@ if(process.env.MONGODB_USERNAME) {
 var mongoose = require("mongoose");
 mongoose.connect(connectionString);
 
-=======
+
 //require("./project/app.js")(app);
->>>>>>> 598613bfde869d2ed53f28c6ac843efb5c5b5215
+require("./assignment/app.js")(app);
+//require("./project/app.js")(app);
 
 
 app.set('ipaddress', (process.env.IP));
