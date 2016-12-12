@@ -1,7 +1,7 @@
 //(function(){
   //  angular
     //    .module("MovieApp")
-      //  .controller("HeaderController", headerController);
+      //  .controller("HeaderControlle
 
 (function(){
     angular
@@ -21,18 +21,18 @@
 
 //
 //(function(){
-  //  angular
-    //    .module("MovieApp")
-      //  .controller("NavigationController", navigationController)
+//  angular
+//    .module("MovieApp")
+//  .controller("NavigationController", navigationController)
 
 //    function navigationController($location){
 
-  //       var vm = this;
-    //    function init(){
-      //      vm.$location = $location;
+//       var vm = this;
+//    function init(){
+//      vm.$location = $location;
 
 //        }
-  //      init();
+//      init();
 
 //    }
 

@@ -23,27 +23,27 @@
 //
 
 //(function() {
-  //  angular
-    //    .module("MovieApp")
-      //  .controller("LoginController", loginController);
+//  angular
+//    .module("MovieApp")
+//  .controller("LoginController", loginController);
 
 //     function loginController(UserService){
 
-  //       var vm = this;
-    //      vm.login = login;
-      //   function init(){
+//       var vm = this;
+//      vm.login = login;
+//   function init(){
 
 //         }
 
 //         init();
-  //       function login(user){
-    //         console.log(user);
-      //       UserService
-        //     findUserByCredentials(credentials)({
-          //      username:user.username,
-            //     password:user.password
-            // })
-       //  }
-   //  }
+//       function login(user){
+//         console.log(user);
+//       UserService
+//     findUserByCredentials(credentials)({
+//      username:user.username,
+//     password:user.password
+// })
+//  }
+//  }
 
 //})();

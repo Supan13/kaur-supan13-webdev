@@ -5,7 +5,7 @@
 
 
     function MovieSearchController(MovieService, $routeParams, $location){
-       // console.log("hello from movie controller");
+        // console.log("hello from movie controller");
         var vm = this;
         vm.searchMovieByTitle = searchMovieByTitle;
         vm.title = $routeParams.title;

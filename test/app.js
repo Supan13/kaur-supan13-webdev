@@ -19,7 +19,7 @@ module.exports = function(app)
             process.env.MONGODB_PASSWORD +
             '@cluster0-shard-00-00-4bzso.mongodb.net:27017,cluster0-shard-00-01-4bzso.mongodb.net:27017,cluster0-shard-00-02-4bzso.mongodb.net:27017/admin?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin';
     }
-
+    
     var mongoose = require("mongoose");
     mongoose.connect(connectionString);
 

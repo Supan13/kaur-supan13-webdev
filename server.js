@@ -29,6 +29,26 @@ app.use(express.static(__dirname + '/public'));
 //require("./assignment/app.js")(app);
 require("./project/app.js")(app);
 
+var connectionString = 'mongodb://127.0.0.1:27017/wam-fall-2016';
+
+
+if(process.env.MONGODB_USERNAME) {
+
+    var username = process.env.MONGODB_USERNAME;
+
+    var password = process.env.MONGODB_PASSWORD;
+
+    connectionString = 'mongodb://'+
+
+        process.env.MONGODB_USERNAME + ':' +
+
+        process.env.MONGODB_PASSWORD +
+        '@cluster0-shard-00-00-4bzso.mongodb.net:27017,cluster0-shard-00-01-4bzso.mongodb.net:27017,cluster0-shard-00-02-4bzso.mongodb.net:27017/admin?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin';
+}
+var mongoose = require("mongoose");
+mongoose.connect(connectionString);
+
+
 
 app.set('ipaddress', (process.env.IP));
 app.set('port', (process.env.PORT || 3000 ));

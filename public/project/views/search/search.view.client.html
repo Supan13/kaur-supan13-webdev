@@ -4,26 +4,26 @@
 
     <h1> Movie Search</h1>
 
-            <input ng-model="model.title"
-                   class="form-control"
-                   placeholder="Batman"/>
-            <button ng-click="model.searchMovieByTitle(model.title)" class="btn btn-primary btn-block" type="button">Search</button>
+    <input ng-model="model.title"
+           class="form-control"
+           placeholder="Batman"/>
+    <button ng-click="model.searchMovieByTitle(model.title)" class="btn btn-primary btn-block" type="button">Search</button>
 
-        <table class="table">
-            <thead>
-            <tr>
-                <th> Title </th>
-                <th> Year </th>
-                <th> Poster </th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr ng-repeat="movie in model.movies">
-                <td><a href="#/details/{{movie.imdbID}}/{{model.title}}">{{movie.Title}}</a></td>
-                <td>{{movie.Year}}</td>
-                <td><img ng-src="{{movie.Poster}}" height="100px"/>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th> Title </th>
+            <th> Year </th>
+            <th> Poster </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="movie in model.movies">
+            <td><a href="#/details/{{movie.imdbID}}/{{model.title}}">{{movie.Title}}</a></td>
+            <td>{{movie.Year}}</td>
+            <td><img ng-src="{{movie.Poster}}" height="100px"/>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

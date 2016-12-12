@@ -1,6 +1,3 @@
-/**
- * Created by supankaur on 12/9/16.
- */
 (function() {
     angular
         .module("MovieApp")
@@ -74,22 +71,22 @@
 
 //
 //(function() {
-  //  angular
-    //    .module("MovieApp")
-      //  .factory("UserService", UserService);
+//  angular
+//    .module("MovieApp")
+//  .factory("UserService", UserService);
 
 //    function UserService($http){
 
-  //  var api = {
-    //    findUserByCredentials:findUserByCredentials
-  //  }
+//  var api = {
+//    findUserByCredentials:findUserByCredentials
+//  }
 
 //    return api;
-  //  function findUserByCredentials(credentials) {
+//  function findUserByCredentials(credentials) {
 
-    //    console.log(credentials);
-      //  return $http.post("/api/user" + credentials);
-     //  }
-   // }
+//    console.log(credentials);
+//  return $http.post("/api/user" + credentials);
+//  }
+// }
 
 //})();

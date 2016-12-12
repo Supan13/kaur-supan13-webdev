@@ -1,5 +1,5 @@
 /**
- * Created by supankaur on 12/8/16.
+ * Created by supankaur on 12/12/16.
  */
 (function(){
     angular
@@ -10,9 +10,9 @@
         $routeProvider
             .when("/home", {
                 templateUrl: "views/user/home/home.view.html"
-              //  resolve: {
+                //  resolve: {
                 //    getLoggedIn: getLoggedIn
-              //  }
+                //  }
             })
             .when("/login", {
                 templateUrl: "views/user/login/login.view.client.html",
@@ -28,17 +28,17 @@
                 templateUrl: "views/user/profile/profile.view.client.html",
                 controller: "ProfileController",
                 controllerAs: "model"
-              //  resolve: {
+                //  resolve: {
                 //    checkLoggedIn: checkLoggedIn
-               // }
+                // }
             })
             .when("/search", {
                 templateUrl: "views/search/search.view.client.html",
                 controller: "MovieSearchController",
                 controllerAs: "model"
-               // resolve: {
-                 //   getLoggedIn: getLoggedIn
-              //  }
+                // resolve: {
+                //   getLoggedIn: getLoggedIn
+                //  }
             })
             .when("/search/:title", {
                 templateUrl: "views/search/search.view.client.html",
@@ -55,37 +55,37 @@
             });
     }
 
-  //  function getLoggedIn(UserService, $q) {
+    //  function getLoggedIn(UserService, $q) {
     //    var deferred = $q.defer();
 //
-  //      UserService
+    //      UserService
     //        .getCurrentUser()
-      //      .then(function(response){
-        //        var currentUser = response.data;
-          //      UserService.setCurrentUser(currentUser);
-            //    deferred.resolve();
-           // });
+    //      .then(function(response){
+    //        var currentUser = response.data;
+    //      UserService.setCurrentUser(currentUser);
+    //    deferred.resolve();
+    // });
 
 //        return deferred.promise;
-  //  }
+    //  }
 
-  //  function checkLoggedIn(UserService, $q, $location) {
+    //  function checkLoggedIn(UserService, $q, $location) {
 
     //    var deferred = $q.defer();
 
-      //  UserService
-        //    .getCurrentUser()
-          //  .then(function(response) {
-            //    var currentUser = response.data;
-              //  if(currentUser) {
-                //    UserService.setCurrentUser(currentUser);
-                  //  deferred.resolve();
-              //  } else {
-                //    deferred.reject();
-                  //  $location.url("/home");
-               // }
-           // });
+    //  UserService
+    //    .getCurrentUser()
+    //  .then(function(response) {
+    //    var currentUser = response.data;
+    //  if(currentUser) {
+    //    UserService.setCurrentUser(currentUser);
+    //  deferred.resolve();
+    //  } else {
+    //    deferred.reject();
+    //  $location.url("/home");
+    // }
+    // });
 
-       // return deferred.promise;
-  //  }
+    // return deferred.promise;
+    //  }
 })();
