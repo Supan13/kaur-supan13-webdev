@@ -27,6 +27,7 @@ app.use(express.static(__dirname + '/public'));
 
 //require ("./test/app.js")(app);
 require("./assignment/app.js")(app);
+<<<<<<< HEAD
 //require("./Project/app.js")(app);
 
 var connectionString = 'mongodb://127.0.0.1:27017/wam-fall-2016';
@@ -48,6 +49,9 @@ if(process.env.MONGODB_USERNAME) {
 var mongoose = require("mongoose");
 mongoose.connect(connectionString);
 
+=======
+//require("./project/app.js")(app);
+>>>>>>> 598613bfde869d2ed53f28c6ac843efb5c5b5215
 
 
 app.set('ipaddress', (process.env.IP));
