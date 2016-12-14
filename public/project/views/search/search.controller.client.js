@@ -1,3 +1,6 @@
+/**
+ * Created by supankaur on 12/13/16.
+ */
 (function () {
     angular
         .module("MovieApp")

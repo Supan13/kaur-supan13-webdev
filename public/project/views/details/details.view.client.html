@@ -30,13 +30,29 @@
             <img ng-src="{{model.movie.Poster}}" height="300px">
         </div>
     </div>
-    <div>
-        <button ng-click="likeMovie(imdbID)">
-            <span class="glyphicon glyphicon-star-empty"></span>
-        </button>
-    </div>
+
+    <button class="btn btn-primary"
+            ng-click="model.favorite(model.data)">
+    <span ng-show="model.movie.likes.indexOf(currentUser._id) > -1"
+          class="glyphicon glyphicon-star"></span>
+        <span ng-show="!model.movie || !model.movie.likes || model.movie.likes.indexOf(currentUser._id) == -1"
+              class="glyphicon glyphicon-star-empty"></span>
+    </button>
+
     <div class="form-group">
         <label for="review">Review</label>
         <input ng-model="model.review" type="text" class="form-control" id="review" placeholder="you can write a review">
-    </div
+    </div>
 </div>
+
+<div ng-if="model.movie.userLikes">
+    <h4>Other Users that Like This Movie</h4>
+    <ul>
+        <li ng-repeat="user in model.movie.userLikes">
+            <a href="#/profile/{{user.username}}">
+                {{user.username}}
+            </a>
+        </li>
+    </ul>
+</div>
+

@@ -1,60 +1,74 @@
+/**
+ * Created by supankaur on 12/13/16.
+ */
 (function() {
     angular
         .module("MovieApp")
         .factory("UserService", UserService);
 
-    function UserService($rootScope) {
-        var model = {
-            users: [
-                {username: "alice", password: "alice", roles: ["student"]},
-                {username: "bob", password: "bob", roles: ["faculty", "admin"]},
-                {username: "charlie", password: "charlie", roles: ["employee"]}
-            ],
-            createUser: createUser,
-            findUserByUsername: findUserByUsername,
-            findUserByCredentials: findUserByCredentials,
-            updateUser: updateUser,
+
+    function UserService($http, $rootScope) {
+
+        var api = {
+          //  findUserByCredentials: findUserByCredentials,
             setCurrentUser: setCurrentUser,
-            getCurrentUser: getCurrentUser
+            getCurrentUser: getCurrentUser,
+            logout : logout,
+            createUser: createUser,
+            getProfile: getProfile,
+            login:login,
+            updateUser: updateUser
+
         };
-        return model;
 
-        function setCurrentUser (user) {
-            $rootScope.currentUser = user;
+        return api;
+
+        function getProfile(userId) {
+            var url = "/api/user/"+userId;
+            return $http.get(url);
+
         }
 
-        function getCurrentUser () {
-            return $rootScope.currentUser;
+
+     //   function getProfile(){
+       //         return $http.get("/api/profile/"+$rootScope.currentUser._id);
+       // }
+
+        function createUser(user){
+            console.log(user);
+            return $http.post("/api/register", user);
         }
 
-        function createUser (user) {
+        function logout(){
+
+            return $http.post("/api/logout");
+        }
+
+        function getCurrentUser(){
+
+            return $http.get("/api/loggedin");
+        }
+
+        function setCurrentUser(user){
+               $rootScope.currentUser = user;
+              // console.log($rootScope.currentUser);
+
+        }
+
+
+     //   function findUserByCredentials(credentials) {
+       //     console.log(credentials);
+         //   return $http.post("/api/login", credentials);
+
+       // }
+
+        function login(username,password) {
             var user = {
-                username: user.username,
-                password: user.password
+                username:username,
+                password:password
             };
-            model.users.push(user);
-            return user;
+            return $http.post("/api/login", user);
         }
-
-        function findUserByUsername (username) {
-            for (var u in model.users) {
-                if (model.users[u].username === username) {
-                    return model.users[u];
-                }
-            }
-            return null;
-        }
-
-        function findUserByCredentials(credentials) {
-            for (var u in model.users) {
-                if (model.users[u].username === credentials.username &&
-                    model.users[u].password === credentials.password) {
-                    return model.users[u];
-                }
-            }
-            return null;
-        }
-
         function updateUser (currentUser) {
             var user = model.findUserByUsername (currentUser.username);
             if (user != null) {
@@ -66,27 +80,10 @@
                 return null;
             }
         }
+
+      //  function login(credentials) {
+        //    return $http.post("/api/login", credentials);
+       // }
     }
+
 })();
-
-//
-//(function() {
-//  angular
-//    .module("MovieApp")
-//  .factory("UserService", UserService);
-
-//    function UserService($http){
-
-//  var api = {
-//    findUserByCredentials:findUserByCredentials
-//  }
-
-//    return api;
-//  function findUserByCredentials(credentials) {
-
-//    console.log(credentials);
-//  return $http.post("/api/user" + credentials);
-//  }
-// }
-
-//})();

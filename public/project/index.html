@@ -10,28 +10,30 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.13/textAngular.css"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.13/textAngular-rangy.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.13/textAngular-sanitize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.13/textAngular.min.js"></script>
     <script src="app.js"></script>
     <script src="config.js"></script>
+    <script src="services/user.service.client.js"></script>
+    <script src="services/movie.service.client.js"></script>
+    <script src="views/header/header.controller.client.js"></script>
+    <script src="views/login/login.controller.client.js"></script>
+    <script src="views/register/register.controller.client.js"></script>
+    <script src="views/profile/profile.controller.client.js"></script>
     <script src="views/search/search.controller.client.js"></script>
     <script src="views/details/details.controller.client.js"></script>
-    <script src="views/user/profile/profile.controller.js"></script>
-    <script src="views/user/register/register.controller.js"></script>
-    <script src="views/user/login/login.controller.js"></script>
-    <script src="views/user/header/header.controller.js"></script>
-    <script src="services/movie.service.client.js"></script>
-    <script src="services/user.service.client.js"></script>
+
     <title>Project Home Page</title>
-    <style>
-        a {
-            cursor: pointer;
-        }
-    </style>
 </head>
 <body>
 <div class="container">
-    <br/>
-    <ng-include src="'views/user/header/header.view.client.html'"></ng-include>
-    <div ng-view></div>
+    <div class="container">
+        <br/>
+        <ng-include src="'views/header/header.view.client.html'"></ng-include>
+        <div ng-view></div>
+</div>
 </div>
 </body>
 </html>
