@@ -1,315 +1,401 @@
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Supan's Homepage</title>
+    <!--fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet'
+          type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic'
+          rel='stylesheet' type='text/css'>
+    <!--//fonts-->
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <!-- for-mobile-apps -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>CS5610 Supan Kaur</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="css/stylish-portfolio.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content="Kong Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+      Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design"/>
+    <script type="application/x-javascript"> addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    } </script>
+    <!-- //for-mobile-apps -->
+    <!-- js -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <!-- js -->
+    <!-- start-smooth-scrolling -->
+    <script type="text/javascript" src="js/move-top.js"></script>
+    <script type="text/javascript" src="js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
+            });
+        });
+    </script>
+    <!-- start-smooth-scrolling -->
 
 </head>
-
 <body>
-
-<!-- Navigation -->
-<a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
-<nav id="sidebar-wrapper">
-    <ul class="sidebar-nav">
-        <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
-        <li class="sidebar-brand">
-            <a href="#top"  onclick = $("#menu-close").click(); >Start Bootstrap</a>
-        </li>
-        <li>
-            <a href="#top" onclick = $("#menu-close").click(); >Home</a>
-        </li>
-        <li>
-            <a href="#about" onclick = $("#menu-close").click(); >About</a>
-        </li>
-        <li>
-            <a href="#services" onclick = $("#menu-close").click(); >Services</a>
-        </li>
-        <li>
-            <a href="#portfolio" onclick = $("#menu-close").click(); >Portfolio</a>
-        </li>
-        <li>
-            <a href="#contact" onclick = $("#menu-close").click(); >Contact</a>
-        </li>
-    </ul>
-</nav>
-
-<!-- Header -->
-<header id="top" class="header">
-    <div class="text-vertical-center">
-        <h1>CS5610 Web Development</h1>
-        <h3>Supan Kaur</h3>
-        <h3>kaur.su@husky.neu.edu</h3>
-        <br>
-        <a href="./assignment/index.html" class="btn btn-dark btn-lg">My Assignment</a>
-        <br>
-        <br>
-        <a href="./project/index.html" class="btn btn-dark btn-lg">My Project</a>
-        <br>
-        <br>
-        <a href="https://github.com/Supan13/kaur-supan13-webdev" class="btn btn-dark btn-lg">Source Code on Github</a>
-        <br>
-        <br>
-        <a href="./assignment/new Resume.pdf" class="btn btn-dark btn-lg">Download My Resume</a>
-        <br>
-    </div>
-</header>
-
-<!-- About -->
-<section id="about" class="about">
+<!-- banner -->
+<div class="banner" id="home">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2>We can do anything we want to if we stick to it long enough.</h2>
-            </div>
-        </div>
-        <!-- /.row -->
-    </div>
-    <!-- /.container -->
-</section>
+        <div class="hidden-xs">
+            <div class="top-header row">
+                <script src="js/classie.js"></script>
+                <!--top-nav---->
 
-<!-- Services -->
-<!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
-<section id="services" class="services bg-primary">
-    <div class="container">
-        <div class="row text-center">
-            <div class="col-lg-10 col-lg-offset-1">
-                <h2>The javascript stack I have learned in this course.</h2>
-                <hr class="small">
-                <div class="row">
-                    <div class="col-md-3 col-sm-6">
-                        <div class="service-item">
-                                <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-cloud fa-stack-1x text-primary"></i>
-                            </span>
-                            <h4>
-                                <strong>Mongo DB</strong>
-                            </h4>
-                            <p>NOSQL database.</p>
-                            <a href="#" class="btn btn-light">Learn More</a>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="service-item">
-                                <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-compass fa-stack-1x text-primary"></i>
-                            </span>
-                            <h4>
-                                <strong>Express</strong>
-                            </h4>
-                            <p>A framework runs on Node.js.</p>
-                            <a href="#" class="btn btn-light">Learn More</a>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="service-item">
-                                <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-flask fa-stack-1x text-primary"></i>
-                            </span>
-                            <h4>
-                                <strong>Angular.js</strong>
-                            </h4>
-                            <p>A javascript MVC framework.</p>
-                            <a href="#" class="btn btn-light">Learn More</a>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="service-item">
-                                <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-shield fa-stack-1x text-primary"></i>
-                            </span>
-                            <h4>
-                                <strong>Node.js</strong>
-                            </h4>
-                            <p>A run-time environment for server.</p>
-                            <a href="#" class="btn btn-light">Learn More</a>
-                        </div>
+                <div class="top-nav">
+                    <div class="menu_box_list">
+                        <ul>
+                            <li><a class="scroll" href="#about"><span>about</span></a></li>
+                            <li><a class="scroll" href="#education"><span>Education</span></a></li>
+                            <li><a class="scroll" href="#workExperience"><span>Work Experience</span></a></li>
+                            <li><a class="scroll" href="#skills"><span>Skills</span></a></li>
+                            <li><a class="scroll" href="#projects"><span>Projects</span></a></li>
+                            <li><a class="scroll" href="#contact"><span>Contact</span></a></li>
+                            <!--- add for project documentation link-->
+                            <div class="clearfix"></div>
+                        </ul>
                     </div>
                 </div>
-                <!-- /.row (nested) -->
+
+
+                <div class="clearfix"></div>
             </div>
-            <!-- /.col-lg-10 -->
         </div>
-        <!-- /.row -->
-    </div>
-    <!-- /.container -->
-</section>
 
-<!-- Callout -->
-<aside class="callout">
-    <div class="text-vertical-center">
-        <h1>Imagination rules the world.</h1>
+        <div class="banner-info">
+            <div class="banner-left">
+                <img src="images/mypic.jpg" class="img-circle" alt=""/>
+            </div>
+            <div class="banner-right">
+                <h1> Supan Kaur </h1>
+                <div class="border"></div>
+                <h2> Graduate Student </h2>
+                <a href="/images/resume1.pdf"download>DownLoad My Resume</a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
     </div>
-</aside>
-
-<!-- Portfolio -->
-<section id="portfolio" class="portfolio">
+</div>
+<!--/header-banner-->
+<!--about-->
+<div class="about text-center" id="about">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-10 col-lg-offset-1 text-center">
-                <h2>My Work</h2>
-                <hr class="small">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="portfolio-item">
-                            <a href="#">
-                                <img class="img-portfolio img-responsive" src="img/Screen Shot 2016-12-10 at 11.04.40 PM.png">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="portfolio-item">
-                            <a href="#">
-                                <img class="img-portfolio img-responsive" src="img/Screen Shot 2016-12-10 at 11.05.52 PM.png">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="portfolio-item">
-                            <a href="#">
-                                <img class="img-portfolio img-responsive" src="img/Screen Shot 2016-12-10 at 11.06.15 PM.png">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="portfolio-item">
-                            <a href="#">
-                                <img class="img-portfolio img-responsive" src="img/Screen Shot 2016-12-10 at 11.06.43 PM.png">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.row (nested) -->
-                <a href="#" class="btn btn-dark">View More Items</a>
-            </div>
-            <!-- /.col-lg-10 -->
-        </div>
-        <!-- /.row -->
+        <h3>ABOUT ME</h3>
+        <div class="strip text-center"><img src="images/about.png" alt=" "/></div>
+        <p>I am a graduate student pursuing Masters in Bioinformatics at Northeastern University, Boston and expecting graduation in August 2017.
+            Actively seeking for a co-op or internship in Bioinformatics/Data Science/Front or Backend Web Development. I am available from January 2017.
+        </p>
+        <p>Apart from the professional front, I keep myself busy with reading, travelling around and watching movies.</p>
+        <ul>
+            <li><a class="fb" href=""   target="_blank"></a></li>
+            <li><a class="twit" href=""   target="_blank"></a></li>
+            <li><a class="in" href="https://www.linkedin.com/in/supankaur"   target="_blank"></a></li>
+        </ul>
     </div>
-    <!-- /.container -->
-</section>
+</div>
+<!--//about-->
 
-<!-- Call to Action -->
-<aside class="call-to-action bg-primary">
+<!--my skill-->
+<div class="my-skills text-center" id="skills">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h3>The buttons below are impossible to resist.</h3>
-                <a href="#" class="btn btn-lg btn-light">Click Me!</a>
-                <a href="#" class="btn btn-lg btn-dark">Look at Me!</a>
+        <h3>MY SKILLS</h3>
+        <div class="strip text-center"><img src="images/skill.png" alt=" "/></div>
+        <div class="skill-grids">
+            <div class="col-md-2 skills-grid text-center">
+                <div class="circle" id="circles-1"></div>
+                <p>SQL</p>
             </div>
-        </div>
-    </div>
-</aside>
-
-<!-- Map -->
-<section id="contact" class="map">
-    <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
-    <br />
-    <small>
-        <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
-    </small>
-    </iframe>
-</section>
-
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-10 col-lg-offset-1 text-center">
-                <h4><strong>You can reach me at</strong>
-                </h4>
-                <p>4537 S Ahmedi Ave #3<br>Saint Francis, WI, 53235</p>
-                <ul class="list-unstyled">
-                    <li><i class="fa fa-phone fa-fw"></i> (510)-378-1330</li>
-                    <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:name@example.com">kaur.su@husky.neu.edu</a>
-                    </li>
-                </ul>
-                <br>
-                <ul class="list-inline">
-                    <li>
-                        <a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-linkedin fa-fw fa-3x"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-github fa-fw fa-3x"></i></a>
-                    </li>
-                </ul>
-                <hr class="small">
-                <p class="text-muted">Copyright &copy; Your Website 2014</p>
+            <div class="col-md-2 skills-grid text-center">
+                <div class="circle" id="circles-2"></div>
+                <p>Python</p>
             </div>
-        </div>
-    </div>
-</footer>
-
-<!-- jQuery -->
-<script src="js/jquery.js"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
-
-<!-- Custom Theme JavaScript -->
-<script>
-    // Closes the sidebar menu
-    $("#menu-close").click(function(e) {
-        e.preventDefault();
-        $("#sidebar-wrapper").toggleClass("active");
-    });
-
-    // Opens the sidebar menu
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#sidebar-wrapper").toggleClass("active");
-    });
-
-    // Scrolls to the selected menu item on the page
-    $(function() {
-        $('a[href*=#]:not([href=#])').click(function() {
-            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
-
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                if (target.length) {
-                    $('html,body').animate({
-                        scrollTop: target.offset().top
-                    }, 1000);
-                    return false;
+            <div class="col-md-2 skills-grid text-center">
+                <div class="circle" id="circles-3"></div>
+                <p>HTML/CSS</p>
+            </div>
+            <div class="col-md-2 skills-grid text-center">
+                <div class="circle" id="circles-4"></div>
+                <p>Perl</p>
+            </div>
+            <div class="col-md-2 skills-grid text-center">
+                <div class="circle" id="circles-5"></div>
+                <p>MongoDB</p>
+            </div>
+            <div class="col-md-2 skills-grid text-center">
+                <div class="circle" id="circles-6"></div>
+                <p>JavaScript</p>
+            </div>
+            <div class="clearfix"></div>
+            <script type="text/javascript" src="js/circles.js"></script>
+            <script>
+                var colors = [
+                    ['#6ed4c0', '#ffffff'], ['#6ed4c0', '#ffffff'], ['#6ed4c0', '#ffffff'], ['#6ed4c0', '#ffffff'], ['#6ed4c0', '#ffffff'], ['#6ed4c0', '#ffffff']
+                ];
+                for (var i = 1; i < 7; i++) {
+                    var child = document.getElementById('circles-' + i),
+                            percentage = 30 + (i * 10);
+                    if(i == 0){
+                    } else if (i == 1) {
+                        percentage = 75;
+                    } else if (i == 2) {
+                        percentage = 80;
+                    } else if (i == 3) {
+                        percentage = 90;
+                    } else if (i == 4) {
+                        percentage = 90;
+                    } else if (i == 5) {
+                        percentage = 70;
+                    } else if (i == 6) {
+                        percentage = 70;
+                    }
+                    Circles.create({
+                        id: child.id,
+                        percentage: percentage,
+                        radius: 80,
+                        width: 10,
+                        number: percentage / 1,
+                        text: '%',
+                        colors: colors[i - 1]
+                    });
                 }
-            }
-        });
+            </script>
+        </div>
+    </div>
+</div>
+<!--//my skill-->
+<div class="my-skill-back"></div>
+<!--education-->
+<div class="education text-center" id="education">
+    <div class="container">
+        <div class="edu-info">
+            <h3>EDUCATION</h3>
+        </div>
+        <div class="strip text-center"><img src="images/edu.png" alt=" "/></div>
+        <div class="edu-grids">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <!--<p>2015 - Present</p><span>Pursuing</span>-->
+                <!--<img src="images/arrow.png" alt=""/>-->
+                <div class="edu-border">
+                    <div class="edu-grid-master">
+                        <h3>Masters in Bioinformatics</h3>
+                        <h4>Northeastern University, Boston</h4>
+                        <h4>Expected Graduation:Aug 2017</h4>
+                    </div>
+                    <div class="edu-grid-info">
+                        <h5>I have taken classes
+                            in Bioinformatics Computational Methods 1 & 2, Web Development, Statistics in Bioinformatics, Bioinformatics Programming, Data
+                            collecting, storing and retrieving, Molecular Biology, Ethics in Biological research and Bioinformatics seminar.</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <!--<p>2008 - 2012</p><span>Graduated</span>-->
+                <!--<img src="images/arrow.png" alt=""/>-->
+                <div class="edu-border">
+                    <div class="edu-grid-master">
+                        <h3>Bachelors in Dental Science and Surgery</h3>
+                        <h4>Kurukshetra University, India</h4>
+                        <h4>2004 - 2009</h4>
+                    </div>
+
+                    <div class="edu-grid-info">
+                        <h5>My undergraduate was focussed on the dental science and surgery.</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+</div>
+<!--//education-->
+<div class="strip-border"><p></p></div>
+<!--work-->
+<div class="work-experience text-center" id="workExperience">
+
+    <div class="container">
+        <div class="work-info">
+            <h3>WORK EXPERIENCE</h3>
+        </div>
+        <div class="strip text-center"><img src="images/work.png" alt=" "/></div>
+        <div class="work-grids text-center">
+            <div class="col-md-6 col-sm-6 col-xs-12 ">
+                <div class="work-grid">
+                    <h3>July 2013 - July 2015</h3>
+                    <div class="work-grid-info">
+                        <h4>Precious Dental Care, Fremont, CA</h4>
+                        <h5>Dental Receptionist and Assistant </h5>
+                        <p>Provide direct patient care in all dental specialities including orthodontics, preventive and pediatric dentistry as dental assistant, responsible for scheduling of patients and recall system.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-sm-6 col-xs-12 ">
+                <div class="work-grid">
+                    <h3>2009 - 2010</h3>
+                    <div class="work-grid-info">
+                        <h4>Deepak Dental Clinic, India</h4>
+                        <h5>Associate Dentist</h5>
+                        <p>Provide professional dental services to patients, diagnose dental conditions, deal with routine appointments and check­ups, treatment plans to maintain or restore the oral health of patients.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+
+<div class="services-back"></div>
+<!--services-->
+<div class="services text-center" id="projects">
+    <div class="container">
+        <div class="ser-info">
+            <h3>PROJECTS</h3>
+        </div>
+        <div class="strip text-center"><img src="images/ser.png" alt=" "/></div>
+        <div class="ser-grids">
+            <!--<div class="col-md-1"></div>-->
+
+            <div class="col-md-4  col-sm-4 ser-grid">
+                <div class="ser-imageb"></div>
+                <h3>MoviesApp</h3>
+                <p>An angular application where users can search, rate or comment about the movies.</p>
+                <p>Built using MEAN stack and third party API.</p>
+                <a href="./project/index.html">view here</a>
+                <p></p>
+                <a href="https://github.com/Supan13/kaur-supan13-webdev"> github</a>
+            </div>
+
+            <div class="col-md-4 col-sm-4 ser-grid">
+                <div class="ser-imaged"></div>
+                <h3>Website Builder</h3>
+                <p>A MEAN stack based application, which allows users to easily build web apps by selecting available
+                    widgets, customizing them and dragging and resizing them. </p>
+                <a href="./assignment/index.html">view here</a>
+                <p></p>
+                <a href="https://github.com/Supan13/kaur-supan13-webdev">github</a>
+            </div>
+
+            <div class="col-md-4 col-sm-4 ser-grid">
+                <div class="ser-imagea"></div>
+                <h3>Data Science</h3>
+                <p>Worked with Food Inspection Dataset for the city of Chicago. Using R the dataset was cleaned and stored in SQL database where it is queried for relevant
+                    analysis.
+                </p>
+                <a href="/images/Kaur_S_TermProject.pdf">Download pdf</a>
+                <p></p>
+                <a href="/images/Kaur_S_TermProject.R">Download R script</a>
+            </div>
+
+            <div class="ser-grids">
+                <!--<div class="col-md-1"></div>-->
+
+                <div class="col-md-4  col-sm-4 ser-grid">
+                    <div class="ser-imagea"></div>
+                    <h3>BlogApp</h3>
+                    <p>A simple blog application where users can create, edit or delete blogs.</p>
+                    <p>Built using MEAN stack and restful API.</p>
+                    <a href="./blog/index.html">view here</a>
+                    <p></p>
+                    <a href="https://github.com/Supan13/kaur-supan13-webdev"> github</a>
+                </div>
+
+                <div class="col-md-4 col-sm-4 ser-grid">
+                    <div class="ser-imageb"></div>
+                    <h3>Molecular Biology</h3>
+                    <p>A reserach proporsal for hypothesis "Antibodies Targeting Amyloid beta as treatment for Alzheimer’s disease". </p>
+                    <p></p>
+                    <a href="/images/BIOL6301 Project Proposal.pdf">download pdf</a>
+                    <p></p>
+                    <a href="https://docs.google.com/presentation/d/1Bznq4wTAoWbZusNqF69d5XYM6xIRaXUXVcjLBJJ1ZqA/pub?start=true&loop=true&delayms=15000">powerpoint</a>
+                </div>
+
+                <div class="col-md-4 col-sm-4 ser-grid">
+                    <div class="ser-imaged"></div>
+                    <h3>Form List</h3>
+                    <p>A simple application using embedded javascript.It implies the basic CRUD operations
+                    where users can create, edit or delete forms.</p>
+                    <a href="./assignment/index.html">view here</a>
+                    <p></p>
+                    <a href="https://github.com/Supan13/kaur-supan13-webdev">github</a>
+                </div>
+
+            <!--<div class="col-md-1"></div>-->
+            <div class="clearfix"></div>
+            <!--<div class="col-md-1"></div>-->
+        </div>
+    </div>
+</div>
+<div class="contact" id="contact">
+    <div class="container">
+        <div class="contact-info text-center">
+            <h3>CONTACT</h3>
+            <div class="strip text-center"><img src="images/con1.png" alt=" "/></div>
+        </div>
+        <div class="contact-grids">
+            <div class="col-md-3 col-xs-1"></div>
+            <div class="col-md-6 col-xs-10 text-center">
+                <h3>Say Hi to Me</h3>
+                <a type="button" class="btn-floating btn-large btn-fb"><i class="fa fa-facebook"></i></a>
+                <!--<div class="stripb "></div>-->
+                <ul>
+                    <a href="mailto:kaur.su@husky.neu.edu">kaur.su@husky.neu.edu</a>
+                </ul>
+            </div>
+            <div class="col-md-3 col-xs-1"></div>
+        </div>
+        <div class="about text-center">
+            <div class="container">
+                <ul>
+                    <li><a class="fb" href="" target="_blank"></a></li>
+                    <li><a class="twit" href=""   target="_blank"></a></li>
+                    <li><a class="in" href="https://www.linkedin.com/in/supankaur"   target="_blank"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--//contact-->
+<div class="footer-top"></div>
+<!--resume-->
+<div class="resume text-center">
+    <div class="container">
+        <div class="strip text-center"><a href="#"><img src="images/down.png" alt=" "/></a></div>
+        <div class="down"><a href="/images/resume1.pdf" download>Download My Resume</a></div>
+    </div>
+</div>
+<!--//resume-->
+
+<!--footer-->
+<div class="footer">
+    <div class="container">
+        <p>Copyright &copy; 2015 Kong. Template by <a href="http://w3layouts.com/"> W3layouts</a></p>
+    </div>
+</div>
+<!--//footer-->
+<!-- here stars scrolling icon -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $().UItoTop({easingType: 'easeOutQuart'});
     });
 </script>
-
+<!-- //here ends scrolling icon -->
 </body>
-
 </html>
+
