@@ -22,7 +22,7 @@ app.use(express.static(__dirname + '/public'));
 //app.use(passport.initialize());
 //app.use(passport.session());
 
-//var connectionString='mongodb://Supan13:dentist13@cluster0-shard-00-00-4bzso.mongodb.net:27017,cluster0-shard-00-01-4bzso.mongodb.net:27017,cluster0-shard-00-02-4bzso.mongodb.net:27017/admin?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin';
+//var connectionString='mongodb://Supan13:dentist13@cluster1-shard-00-00-jotid.mongodb.net:27017,cluster1-shard-00-01-jotid.mongodb.net:27017,cluster1-shard-00-02-jotid.mongodb.net:27017/admin?ssl=true&replicaSet=Cluster1-shard-0&authSource=admin';
 var connectionString = 'mongodb://127.0.0.1:27017/wam-fall-2016';
 var mongoose = require("mongoose");
 mongoose.connect(connectionString);
@@ -126,7 +126,7 @@ function createPost(req,res){
 
 //require ("./test/app.js")(app);
 require("./assignment/app.js")(app);
-//require("./project/app.js")(app,mongoose);
+//require("./project/app.js")(app);
 
 
 
